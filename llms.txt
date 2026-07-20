@@ -1,0 +1,28 @@
+# BNL Plus
+
+> BNL Plus is an online fitness and general nutrition coaching brand (a Bluffs Nutrition Lounge brand) founded by coach Elijah Robles in Scottsbluff, Nebraska. Its flagship program, Body Rebuild, is a 16-week online strength and nutrition system for busy adults 35+ who have been inactive or inconsistent and want to rebuild strength, lose fat, and return to consistent training. Coaching is available across the United States; local Private sessions are available in the Scottsbluff, Nebraska area by appointment.
+
+Key facts:
+- Program: Body Rebuild — 16 weeks, three required strength workouts per week plus one optional Rebuild Accelerator session.
+- Training tracks: Foundation, Build, and Performance — each available for Home or Gym.
+- Nutrition: practical structure (protein targets, portions, habits, food logging when appropriate); no rigid meal plans and no medical nutrition therapy.
+- Tiers: Body Rebuild Essentials ($149/month × 4, $596 total, self-directed), Body Rebuild Coaching ($229/month × 4, $916 total, weekly feedback and group accountability, max 10 per cohort — recommended for most clients), Body Rebuild Private ($499/month × 4, $1,996 total, weekly 1:1 support, max 5 active clients).
+- Enrollment path: free Restart Assessment → application → review → Fit Call (Coaching/Private) → payment. No purchase before application approval.
+- Scope: fitness and general nutrition coaching only — not medical care, injury diagnosis, rehabilitation, physical therapy, medication management, or medical nutrition therapy.
+
+## Core Pages
+- [Home](https://bnlch.com/): Body Rebuild overview for busy adults 35+ — the problem, the system, the 16-week path, tiers, and founder proof.
+- [Body Rebuild](https://bnlch.com/body-rebuild): Full program details — what is included, home equipment, training levels, nutrition approach, and the enrollment process.
+- [Compare Tiers](https://bnlch.com/tiers): Side-by-side comparison of Essentials, Coaching, and Private — prices, support levels, boundaries, and capacity.
+- [Restart Assessment](https://bnlch.com/restart-assessment): Free 5-minute assessment returning restart readiness, likely training level, biggest constraint, and likely support tier.
+
+## About & Authority
+- [Founder Story](https://bnlch.com/founder): Elijah Robles' own 16-week transformation — 210 lb to 180 lb, back pain resolved, 315 lb bench press — the origin of Body Rebuild.
+- [FAQ](https://bnlch.com/faq): 18 answers covering workouts, equipment, nutrition, coaching access, pricing, health screening, and enrollment.
+
+## Enrollment
+- [Apply](https://bnlch.com/apply): The Body Rebuild application — review process, seven possible outcomes, and readiness checklist.
+- [Policies](https://bnlch.com/policies): Privacy, terms, health and coaching boundaries, payment, cancellation, SMS, and cookie policies.
+
+## Contact
+- [Contact](https://bnlch.com/contact): info@bnlch.com — online coaching across the United States; local Private sessions in Scottsbluff, Nebraska.

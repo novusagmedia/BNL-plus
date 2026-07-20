@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page Not Found | BNL Plus</title>
+<meta name="description" content="This page is not part of the plan. Return home or take the free Body Rebuild Restart Assessment." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: "#171717",
+          graphite: "#333333",
+          stone: "#767676",
+          line: "#D7D7D4",
+          mist: "#ECECEA",
+          canvas: "#F7F7F5",
+        },
+        fontFamily: {
+          display: ["Archivo", "Inter", "sans-serif"],
+          body: ["Inter", "sans-serif"],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body { font-family: "Inter", sans-serif; }
+  ::selection { background: #000; color: #fff; }
+  .display-tight { letter-spacing: -0.03em; line-height: 0.98; }
+  .eyebrow { font-family: "Inter", sans-serif; font-weight: 600; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    font-family: "Inter", sans-serif; font-weight: 600; font-size: 0.95rem;
+    padding: 0.9rem 1.6rem; border-radius: 4px; border: 1px solid #000;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+  .btn-primary { background: #000; color: #fff; }
+  .btn-primary:hover { background: #333333; border-color: #333333; }
+  .btn-secondary { background: transparent; color: #000; }
+  .btn-secondary:hover { background: #000; color: #fff; }
+  .footlink { font-size: 0.85rem; color: #767676; transition: color 0.15s ease; }
+  .footlink:hover { color: #000; }
+  .footlink:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+</style>
+</head>
+
+<body class="bg-white text-graphite antialiased min-h-screen flex flex-col">
+
+<!-- ============ HEADER ============ -->
+<header class="border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-4" aria-label="BNL Plus — Home">
+      <img src="assets/logo-black.png" alt="BNL Plus" class="h-7 w-auto" />
+    </a>
+    <a href="restart-assessment.html" class="btn btn-primary !py-2.5 !px-5 text-sm">Take the Free Restart Assessment</a>
+  </div>
+</header>
+
+<!-- ============ 404 ============ -->
+<main id="main" class="flex-1 flex items-center bg-canvas">
+  <div class="max-w-2xl mx-auto px-5 md:px-8 py-24 md:py-32 text-center">
+    <p class="eyebrow text-stone mb-6">Error 404</p>
+    <h1 class="font-display font-extrabold display-tight text-black text-4xl md:text-6xl">This page is not part of the plan.</h1>
+    <p class="mt-7 text-[1.05rem] leading-[1.7] text-graphite">
+      The page may have moved, the link may be outdated, or the URL may be incorrect.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="index.html" class="btn btn-primary">Return Home</a>
+      <a href="restart-assessment.html" class="btn btn-secondary">Take the Free Restart Assessment</a>
+    </div>
+  </div>
+</main>
+
+<!-- ============ FOOTER (slim) ============ -->
+<footer class="bg-white border-t border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <p class="text-[0.78rem] text-stone">&copy; 2026 BNL Plus. All rights reserved. A Bluffs Nutrition Lounge Brand.</p>
+    <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
+      <a class="footlink" href="body-rebuild.html">Body Rebuild</a>
+      <a class="footlink" href="tiers.html">Compare Tiers</a>
+      <a class="footlink" href="founder.html">Founder Story</a>
+      <a class="footlink" href="faq.html">FAQ</a>
+      <a class="footlink" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

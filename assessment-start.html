@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Body Rebuild Restart Assessment | BNL Plus</title>
+<meta name="description" content="Answer 18 questions to find your restart readiness, likely training level, biggest constraint, and the support level that fits your situation." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: "#171717",
+          graphite: "#333333",
+          stone: "#767676",
+          line: "#D7D7D4",
+          mist: "#ECECEA",
+          canvas: "#F7F7F5",
+        },
+        fontFamily: {
+          display: ["Archivo", "Inter", "sans-serif"],
+          body: ["Inter", "sans-serif"],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Inter", sans-serif; }
+  ::selection { background: #000; color: #fff; }
+
+  .display-tight { letter-spacing: -0.03em; line-height: 1.05; }
+  .eyebrow {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.9rem 1.6rem;
+    border-radius: 4px;
+    border: 1px solid #000;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    cursor: pointer;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+  .btn-primary { background: #000; color: #fff; }
+  .btn-primary:hover { background: #333333; border-color: #333333; }
+  .btn-secondary { background: transparent; color: #000; }
+  .btn-secondary:hover { background: #000; color: #fff; }
+
+  .navlink {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333333;
+    transition: color 0.15s ease;
+    padding: 0.25rem 0;
+  }
+  .navlink:hover { color: #000; }
+  .navlink:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+
+  /* progress bar */
+  #progress-fill {
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* answer options */
+  .opt {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    text-align: left;
+    padding: 1.05rem 1.25rem;
+    border: 1px solid #D7D7D4;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 0.98rem;
+    font-weight: 500;
+    color: #171717;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+  }
+  .opt:hover { border-color: #000; }
+  .opt:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+  .opt:active { transform: translateY(1px); }
+  .opt.selected { border-color: #000; background: #000; color: #fff; }
+  .opt .opt-num {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* form fields */
+  .field label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #171717;
+    margin-bottom: 0.4rem;
+  }
+  .field input[type="text"], .field input[type="email"], .field input[type="tel"], .field select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #D7D7D4;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #171717;
+    background: #fff;
+    transition: border-color 0.15s ease;
+  }
+  .field input:focus, .field select:focus { outline: none; border-color: #000; }
+  .field input:focus-visible, .field select:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+  .field .err { display: none; color: #171717; font-weight: 600; font-size: 0.78rem; margin-top: 0.35rem; }
+  .field.invalid input, .field.invalid select { border-color: #000; background: #ECECEA; }
+  .field.invalid .err { display: block; }
+
+  .consent {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #333333;
+  }
+  .consent input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-top: 0.15rem;
+    accent-color: #000;
+    flex-shrink: 0;
+  }
+  .consent input:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+
+  .phase { display: none; }
+  .phase.active { display: block; }
+
+  .fade-in { animation: fadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .catbar-fill { transform-origin: left; transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fade-in { animation: none; }
+    #progress-fill, .catbar-fill { transition: none; }
+  }
+</style>
+</head>
+
+<body class="bg-canvas text-graphite antialiased min-h-screen flex flex-col">
+
+<!-- ============ HEADER (minimal) ============ -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-4" aria-label="BNL Plus — Home">
+      <img src="assets/logo-black.png" alt="BNL Plus" class="h-7 w-auto" />
+    </a>
+    <p class="eyebrow text-stone hidden sm:block">Body Rebuild Restart Assessment</p>
+    <a href="restart-assessment.html" class="navlink">Exit</a>
+  </div>
+  <div class="h-[3px] bg-mist" aria-hidden="true">
+    <div id="progress-fill" class="h-full bg-black w-full scale-x-0"></div>
+  </div>
+</header>
+
+<main id="main" class="flex-1">
+
+<!-- ============ PHASE: QUIZ ============ -->
+<section id="phase-quiz" class="phase active" aria-label="Assessment questions">
+  <div class="max-w-2xl mx-auto px-5 md:px-8 py-14 md:py-20">
+    <div id="quiz-card">
+      <p class="eyebrow text-stone mb-5"><span id="q-counter">Question 1 of 18</span></p>
+      <h1 id="q-text" class="font-display font-bold display-tight text-black text-2xl md:text-[2rem] min-h-[5.5rem]"></h1>
+      <div id="q-options" class="mt-8 space-y-3"></div>
+      <div class="mt-8 flex items-center justify-between">
+        <button id="q-back" class="navlink" type="button">&#8592; Back</button>
+        <p class="text-[0.78rem] text-stone">Answer honestly &mdash; the result is only useful if it is true.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHASE: CONTACT GATE ============ -->
+<section id="phase-gate" class="phase" aria-label="Unlock your result">
+  <div class="max-w-xl mx-auto px-5 md:px-8 py-14 md:py-20">
+    <div class="fade-in">
+      <p class="eyebrow text-stone mb-4">One Last Step</p>
+      <h1 class="font-display font-extrabold display-tight text-black text-3xl md:text-4xl">Unlock Your Body Rebuild Restart Result</h1>
+      <form id="gate-form" class="mt-9 space-y-5" novalidate>
+        <div class="field" data-field="firstName">
+          <label for="f-first">First name</label>
+          <input id="f-first" name="firstName" type="text" autocomplete="given-name" required />
+          <p class="err">Enter your first name.</p>
+        </div>
+        <div class="field" data-field="email">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required />
+          <p class="err">Enter a valid email address.</p>
+        </div>
+        <div class="field" data-field="phone">
+          <label for="f-phone">Phone</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" required />
+          <p class="err">Enter a valid phone number.</p>
+        </div>
+        <div class="field" data-field="ageRange">
+          <label for="f-age">Age range</label>
+          <select id="f-age" name="ageRange" required>
+            <option value="">Select&hellip;</option>
+            <option value="under18">Under 18</option>
+            <option value="18to34">18&ndash;34</option>
+            <option value="35to44">35&ndash;44</option>
+            <option value="45to54">45&ndash;54</option>
+            <option value="55to64">55&ndash;64</option>
+            <option value="65plus">65+</option>
+          </select>
+          <p class="err">Select your age range.</p>
+        </div>
+        <div class="field" data-field="environment">
+          <label for="f-env">Where will you train?</label>
+          <select id="f-env" name="environment" required>
+            <option value="">Select&hellip;</option>
+            <option value="home">At home</option>
+            <option value="gym">At a gym</option>
+            <option value="both">Both</option>
+            <option value="notSure">Not sure yet</option>
+          </select>
+          <p class="err">Select a training environment.</p>
+        </div>
+        <div class="field" data-field="mainGoal">
+          <label for="f-goal">Main goal</label>
+          <select id="f-goal" name="mainGoal" required>
+            <option value="">Select&hellip;</option>
+            <option value="loseFat">Lose fat</option>
+            <option value="rebuildStrength">Rebuild strength</option>
+            <option value="both">Lose fat and rebuild strength</option>
+            <option value="energyConsistency">More energy and consistency</option>
+          </select>
+          <p class="err">Select your main goal.</p>
+        </div>
+        <div class="field" data-field="biggestObstacle">
+          <label for="f-obstacle">Biggest obstacle</label>
+          <select id="f-obstacle" name="biggestObstacle" required>
+            <option value="">Select&hellip;</option>
+            <option value="schedule">My schedule keeps winning</option>
+            <option value="unsureWhatToDo">I am not sure what to do</option>
+            <option value="nutrition">Nutrition falls apart</option>
+            <option value="energyRecovery">Low energy or slow recovery</option>
+            <option value="accountability">I do not follow through alone</option>
+            <option value="painConcern">A pain or health concern</option>
+            <option value="other">Something else</option>
+          </select>
+          <p class="err">Select your biggest obstacle.</p>
+        </div>
+        <div class="field pt-2" data-field="emailConsent">
+          <label class="consent">
+            <input id="f-email-consent" name="emailConsent" type="checkbox" required />
+            <span>I agree to receive my result and related emails from BNL Plus at the address above. I can unsubscribe at any time.</span>
+          </label>
+          <p class="err">Email consent is required to deliver your result.</p>
+        </div>
+        <div class="field" data-field="smsConsent">
+          <label class="consent">
+            <input id="f-sms-consent" name="smsConsent" type="checkbox" />
+            <span>Optional: I agree to receive a small number of text messages from BNL Plus. Message and data rates may apply. Reply STOP to opt out.</span>
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary w-full !py-4 mt-2">Reveal My Result</button>
+        <p class="text-[0.78rem] text-stone text-center">Your result and Seven-Day Plan are delivered before any sales call or application.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHASE: RESULT ============ -->
+<section id="phase-result" class="phase" aria-label="Your result">
+  <div class="max-w-3xl mx-auto px-5 md:px-8 py-14 md:py-20">
+    <div class="fade-in">
+      <p class="eyebrow text-stone mb-4">Your Body Rebuild Restart Result</p>
+      <h1 id="r-greeting" class="font-display font-extrabold display-tight text-black text-3xl md:text-[2.6rem]"></h1>
+
+      <!-- readiness -->
+      <div class="mt-10 border border-line bg-white rounded-md p-7 md:p-9">
+        <div class="flex items-baseline justify-between gap-4 flex-wrap">
+          <div>
+            <p class="eyebrow text-stone mb-2">Your Result</p>
+            <p id="r-readiness-title" class="font-display font-extrabold display-tight text-black text-3xl md:text-4xl"></p>
+          </div>
+          <p class="font-display font-extrabold display-tight text-black text-3xl md:text-4xl"><span id="r-score"></span><span class="text-stone text-xl font-bold">/45</span></p>
+        </div>
+        <p id="r-readiness-copy" class="mt-5 text-[0.98rem] leading-[1.7] text-graphite"></p>
+        <!-- category bars -->
+        <div id="r-cats" class="mt-7 space-y-3"></div>
+      </div>
+
+      <!-- level + constraint -->
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="border border-line bg-white rounded-md p-7">
+          <p class="eyebrow text-stone mb-2">Likely Training Level</p>
+          <p id="r-level-title" class="font-display font-extrabold display-tight text-black text-2xl"></p>
+          <p id="r-level-copy" class="mt-3 text-[0.9rem] leading-[1.7] text-graphite"></p>
+        </div>
+        <div class="border border-line bg-white rounded-md p-7">
+          <p class="eyebrow text-stone mb-2">Your Biggest Constraint</p>
+          <p id="r-constraint-title" class="font-display font-extrabold display-tight text-black text-2xl"></p>
+          <p id="r-constraint-copy" class="mt-3 text-[0.9rem] leading-[1.7] text-graphite"></p>
+        </div>
+      </div>
+
+      <!-- support fit -->
+      <div class="mt-6 border-2 border-black bg-white rounded-md p-7 md:p-9">
+        <p class="eyebrow text-stone mb-2">Your Likely Support Fit</p>
+        <p id="r-tier-title" class="font-display font-extrabold display-tight text-black text-2xl md:text-3xl"></p>
+        <p id="r-tier-price" class="mt-2 text-[0.95rem] font-semibold text-ink"></p>
+        <p id="r-tier-sugg" class="mt-4 text-[0.95rem] leading-[1.7] text-graphite"></p>
+        <p id="r-tier-desc" class="mt-3 text-[0.95rem] leading-[1.7] text-graphite"></p>
+        <p id="r-cohort" class="mt-4 text-[0.85rem] text-stone hidden"></p>
+      </div>
+
+      <!-- caution / age notes -->
+      <p id="r-caution" class="mt-6 text-[0.85rem] leading-[1.7] text-stone border border-line rounded-md p-5 bg-white hidden"></p>
+      <p id="r-under18" class="mt-6 text-[0.85rem] leading-[1.7] text-stone border border-line rounded-md p-5 bg-white hidden"></p>
+
+      <!-- CTA -->
+      <div class="mt-12 text-center">
+        <h2 class="font-display font-extrabold display-tight text-black text-2xl md:text-3xl">Your assessment shows where you are now. Body Rebuild gives you the complete 16-week system.</h2>
+        <p class="mt-4 text-[0.95rem] leading-[1.7] text-graphite max-w-xl mx-auto">Apply so BNL Plus can confirm your training level, accountability needs, and safest starting point.</p>
+        <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+          <a id="r-cta-apply" href="apply.html" class="btn btn-primary">Find My Best Body Rebuild Tier</a>
+          <a href="seven-day-plan.html" class="btn btn-secondary">Download My Seven-Day Restart Plan</a>
+        </div>
+        <p class="mt-4 text-[0.85rem] text-stone">Not ready to apply? Begin with Day 1 today and use your results to guide the next seven days.</p>
+        <p class="mt-8"><button id="r-retake" class="navlink" type="button">Retake the assessment</button></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER (slim) ============ -->
+<footer class="bg-white border-t border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <p class="text-[0.78rem] text-stone">&copy; 2026 BNL Plus. All rights reserved. A Bluffs Nutrition Lounge Brand.</p>
+    <p class="text-[0.78rem] text-stone max-w-md">BNL Plus provides fitness and general nutrition coaching. It does not provide medical care or medical nutrition therapy.</p>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   BNL Plus Restart Assessment — scoring engine v1.0 (JS port)
+   Ported from Structure/BNL_Plus_Assessment_Scoring_Engine_v1
+   ============================================================ */
+
+const QUESTIONS = [
+  "I currently complete at least three intentional workouts per week.",
+  "I have maintained a consistent exercise routine during the last three months.",
+  "When I miss a workout, I return to my plan instead of abandoning the week.",
+  "I know which strength exercises are appropriate for my current experience.",
+  "I understand how to choose a safe starting weight.",
+  "I know how to progress an exercise without sacrificing technique.",
+  "I have a repeatable meal structure during busy weeks.",
+  "I consistently include enough protein in my meals.",
+  "My weekends and restaurant meals do not regularly erase my weekday progress.",
+  "I usually have enough energy to complete my planned workouts.",
+  "My sleep and recovery allow me to train consistently.",
+  "My soreness or stiffness does not repeatedly prevent me from exercising.",
+  "I know exactly when my three weekly workouts will happen.",
+  "I have a backup plan when work or family disrupts my schedule.",
+  "I can consistently protect 30-60 minutes for training.",
+  "I follow through without another person checking on me.",
+  "I can identify and correct my own training and nutrition mistakes.",
+  "I remain consistent when motivation drops or life becomes stressful.",
+];
+
+const ANSWER_LABELS = ["Not true at all", "Occasionally true", "Usually true", "Consistently true"];
+
+const CATEGORY_QUESTIONS = {
+  trainingConsistency: [0, 1, 2],
+  strengthConfidence: [3, 4, 5],
+  nutritionStructure: [6, 7, 8],
+  energyRecovery: [9, 10, 11],
+  scheduleControl: [12, 13, 14],
+  accountability: [15, 16, 17],
+};
+
+const CONSTRAINT_FALLBACK_ORDER = [
+  "scheduleControl", "trainingConsistency", "nutritionStructure",
+  "energyRecovery", "strengthConfidence", "accountability",
+];
+
+const OBSTACLE_TO_CATEGORY = {
+  schedule: "scheduleControl",
+  unsureWhatToDo: "strengthConfidence",
+  nutrition: "nutritionStructure",
+  energyRecovery: "energyRecovery",
+  accountability: "accountability",
+  painConcern: "energyRecovery",
+};
+
+const PRICES = {
+  essentials: { monthly: 149, payments: 4, total: 596 },
+  coaching: { monthly: 229, payments: 4, total: 916 },
+  private: { monthly: 499, payments: 4, total: 1996 },
+};
+
+const COHORT = { status: "open", startDate: "August 10, 2026", applicationDeadline: "August 7, 2026", capacity: 10 };
+
+function calculateResult(answers, context) {
+  const categories = {};
+  for (const [key, idxs] of Object.entries(CATEGORY_QUESTIONS)) {
+    categories[key] = idxs.reduce((t, i) => t + answers[i], 0);
+  }
+  const restartReadiness = answers.slice(0, 15).reduce((t, v) => t + v, 0);
+  const accountabilityRaw = categories.accountability;
+  const supportNeed = 9 - accountabilityRaw;
+
+  const readiness = restartReadiness <= 15 ? "restarting" : restartReadiness <= 30 ? "rebuilding" : "readyToProgress";
+
+  let level;
+  if (restartReadiness <= 15 || categories.strengthConfidence <= 3) level = "foundation";
+  else if (restartReadiness >= 31 && categories.strengthConfidence >= 8 && categories.trainingConsistency >= 7) level = "performance";
+  else level = "build";
+
+  const supportTier = supportNeed <= 2 ? "essentials" : supportNeed <= 6 ? "coaching" : "private";
+
+  const lowest = Math.min(...Object.values(categories));
+  const tied = Object.keys(categories).filter((k) => categories[k] === lowest);
+  const obstacleCat = OBSTACLE_TO_CATEGORY[context.biggestObstacle];
+  const constraint = obstacleCat && tied.includes(obstacleCat)
+    ? obstacleCat
+    : CONSTRAINT_FALLBACK_ORDER.find((k) => tied.includes(k));
+
+  return {
+    categories, restartReadiness, supportNeed, readiness, level, supportTier, constraint,
+    price: PRICES[supportTier],
+    cohortBlock: supportTier === "coaching" ? COHORT : null,
+    flags: {
+      under18: context.ageRange === "under18",
+      painConcern: context.biggestObstacle === "painConcern",
+      applicationCtaAllowed: context.ageRange !== "under18",
+    },
+  };
+}
+
+/* ============ result copy bank (locked) ============ */
+const READINESS_COPY = {
+  restarting: { title: "Restarting", copy: "You do not need a more advanced plan. You need a clear starting point, lower complexity, and a schedule you can repeat. Your fastest win will come from completing simple actions consistently instead of trying to make up for lost time." },
+  rebuilding: { title: "Rebuilding", copy: "You are not starting from zero, but your current system is not strong enough to survive busy weeks. Your fastest win will come from turning scattered effort into a repeatable training and nutrition structure." },
+  readyToProgress: { title: "Ready to Progress", copy: "You already have several useful habits. Your next result will come from better progression, precision, and accountability rather than simply doing more. Your fastest win will come from identifying the weakest link and applying a more deliberate system." },
+};
+
+const LEVEL_COPY = {
+  foundation: { label: "Foundation", copy: "You are most likely to succeed with lower complexity, conservative volume, and time to rebuild movement confidence." },
+  build: { label: "Build", copy: "You likely have enough experience for a moderate program, but you need consistent progression and recovery rules." },
+  performance: { label: "Performance", copy: "You may be ready for higher progression demands, provided recent training, technique, and recovery support it." },
+};
+
+const CONSTRAINT_COPY = {
+  trainingConsistency: { label: "Training Consistency", copy: "Your current routine breaks too easily after missed sessions. Protect three realistic workout appointments and use a clear return-to-plan rule." },
+  strengthConfidence: { label: "Strength Confidence", copy: "You are uncertain about exercise selection, starting loads, or progression. Use a level-appropriate program and record clean repetitions before chasing heavier weight." },
+  nutritionStructure: { label: "Nutrition Structure", copy: "Your meals are not repeatable enough during busy weeks and weekends. Build three protein-centered meals you can repeat." },
+  energyRecovery: { label: "Energy and Recovery", copy: "Training demand and recovery are not working together. Protect sleep, hydration, meal consistency, and a conservative starting workload." },
+  scheduleControl: { label: "Schedule Control", copy: "Your workouts do not yet have protected times and backup options. Choose exact appointments and a minimum plan for disrupted weeks." },
+  accountability: { label: "Accountability", copy: "You struggle to follow through when motivation drops. Create visible commitments, weekly review, and enough support to prevent one bad day from becoming a lost month." },
+};
+
+const TIER_COPY = {
+  essentials: { name: "Body Rebuild Essentials", sugg: "Your answers suggest that you can execute independently when the correct plan is in front of you.", desc: "Essentials gives you the 16-week program, progression rules, nutrition foundations, and self-directed tools without coaching calls or individual adjustments." },
+  coaching: { name: "Body Rebuild Coaching", sugg: "Your answers suggest that a plan alone may not be enough. Weekly feedback and accountability are likely to improve your follow-through.", desc: "Coaching adds personalized starting targets, weekly written review, one form video per week, group accountability, and data-based adjustments." },
+  private: { name: "Body Rebuild Private", sugg: "Your answers suggest that you are more likely to succeed with private accountability, faster feedback, and more individualized problem-solving.", desc: "Private adds weekly 1:1 coaching, same-business-day support, deeper training and nutrition adjustments, up to two form videos per week, and one monthly live training session." },
+};
+
+const CAT_LABELS = {
+  trainingConsistency: "Training Consistency",
+  strengthConfidence: "Strength Confidence",
+  nutritionStructure: "Nutrition Structure",
+  energyRecovery: "Energy & Recovery",
+  scheduleControl: "Schedule Control",
+  accountability: "Accountability",
+};
+
+/* ============ app state ============ */
+const STORAGE_KEY = "bnl_assessment_v1";
+const answers = new Array(18).fill(null);
+let current = 0;
+
+const els = {
+  quiz: document.getElementById("phase-quiz"),
+  gate: document.getElementById("phase-gate"),
+  result: document.getElementById("phase-result"),
+  counter: document.getElementById("q-counter"),
+  qtext: document.getElementById("q-text"),
+  qopts: document.getElementById("q-options"),
+  back: document.getElementById("q-back"),
+  progress: document.getElementById("progress-fill"),
+  form: document.getElementById("gate-form"),
+};
+
+function setPhase(name) {
+  for (const p of [els.quiz, els.gate, els.result]) p.classList.remove("active");
+  ({ quiz: els.quiz, gate: els.gate, result: els.result })[name].classList.add("active");
+  window.scrollTo(0, 0);
+}
+
+function setProgress(fraction) {
+  els.progress.style.transform = `scaleX(${fraction})`;
+}
+
+/* ============ quiz ============ */
+function renderQuestion() {
+  els.counter.textContent = `Question ${current + 1} of 18`;
+  els.qtext.textContent = QUESTIONS[current];
+  els.qopts.innerHTML = "";
+  ANSWER_LABELS.forEach((label, value) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "opt" + (answers[current] === value ? " selected" : "");
+    b.innerHTML = `<span class="opt-num">${value}</span><span>${label}</span>`;
+    b.addEventListener("click", () => {
+      answers[current] = value;
+      renderQuestion();
+      setTimeout(() => {
+        if (current < 17) { current += 1; renderQuestion(); }
+        else { setProgress(1); setPhase("gate"); }
+        setProgress(Math.min((answers.filter((a) => a !== null).length) / 19, 1));
+      }, 220);
+    });
+    els.qopts.appendChild(b);
+  });
+  els.back.style.visibility = current === 0 ? "hidden" : "visible";
+  setProgress(current / 19);
+}
+
+els.back.addEventListener("click", () => {
+  if (current > 0) { current -= 1; renderQuestion(); }
+});
+
+/* ============ contact gate ============ */
+function fieldValue(name) {
+  const el = els.form.elements[name];
+  return el.type === "checkbox" ? el.checked : el.value.trim();
+}
+
+function validateGate() {
+  let ok = true;
+  const checks = {
+    firstName: (v) => v.length > 0,
+    email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+    phone: (v) => v.replace(/[^\d]/g, "").length >= 7,
+    ageRange: (v) => v.length > 0,
+    environment: (v) => v.length > 0,
+    mainGoal: (v) => v.length > 0,
+    biggestObstacle: (v) => v.length > 0,
+    emailConsent: (v) => v === true,
+  };
+  for (const [name, test] of Object.entries(checks)) {
+    const wrap = els.form.querySelector(`[data-field="${name}"]`);
+    const pass = test(fieldValue(name));
+    wrap.classList.toggle("invalid", !pass);
+    if (!pass) ok = false;
+  }
+  return ok;
+}
+
+/* Hook: wire this to the CRM / email platform when the live stack is chosen.
+   Receives the full lead payload (contact + answers + computed result). */
+function submitLead(payload) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(payload)); } catch (e) {}
+}
+
+els.form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (!validateGate()) return;
+  const contact = {
+    firstName: fieldValue("firstName"),
+    email: fieldValue("email"),
+    phone: fieldValue("phone"),
+    ageRange: fieldValue("ageRange"),
+    environment: fieldValue("environment"),
+    mainGoal: fieldValue("mainGoal"),
+    biggestObstacle: fieldValue("biggestObstacle"),
+    emailConsent: fieldValue("emailConsent"),
+    smsConsent: fieldValue("smsConsent"),
+    submittedAt: new Date().toISOString(),
+  };
+  const result = calculateResult(answers, contact);
+  submitLead({ version: "1.0", contact, answers: answers.slice(), result });
+  renderResult(contact, result);
+  setPhase("result");
+});
+
+/* ============ result ============ */
+function renderResult(contact, r) {
+  document.getElementById("r-greeting").textContent = `${contact.firstName}, your result is ready.`;
+  document.getElementById("r-readiness-title").textContent = READINESS_COPY[r.readiness].title;
+  document.getElementById("r-readiness-copy").textContent = READINESS_COPY[r.readiness].copy;
+  document.getElementById("r-score").textContent = r.restartReadiness;
+
+  const cats = document.getElementById("r-cats");
+  cats.innerHTML = "";
+  for (const [key, score] of Object.entries(r.categories)) {
+    const row = document.createElement("div");
+    row.innerHTML =
+      `<div class="flex items-baseline justify-between gap-3 mb-1">` +
+      `<span class="text-[0.8rem] font-semibold text-ink">${CAT_LABELS[key]}</span>` +
+      `<span class="text-[0.8rem] text-stone">${score}/9</span></div>` +
+      `<div class="h-[3px] bg-mist rounded-full overflow-hidden">` +
+      `<div class="catbar-fill h-full bg-black rounded-full" style="transform: scaleX(${score / 9})"></div></div>`;
+    cats.appendChild(row);
+  }
+
+  document.getElementById("r-level-title").textContent = LEVEL_COPY[r.level].label;
+  document.getElementById("r-level-copy").textContent = LEVEL_COPY[r.level].copy;
+  document.getElementById("r-constraint-title").textContent = CONSSTRAINT_SAFE(r.constraint).label;
+  document.getElementById("r-constraint-copy").textContent = CONSSTRAINT_SAFE(r.constraint).copy;
+
+  const tier = TIER_COPY[r.supportTier];
+  document.getElementById("r-tier-title").textContent = tier.name;
+  document.getElementById("r-tier-price").textContent =
+    `$${r.price.monthly}/month × ${r.price.payments} — $${r.price.total.toLocaleString()} total`;
+  document.getElementById("r-tier-sugg").textContent = tier.sugg;
+  document.getElementById("r-tier-desc").textContent = tier.desc;
+
+  const cohortEl = document.getElementById("r-cohort");
+  if (r.cohortBlock) {
+    cohortEl.textContent = `Planned start: ${r.cohortBlock.startDate} · Applications close: ${r.cohortBlock.applicationDeadline} · Capacity: ${r.cohortBlock.capacity}`;
+    cohortEl.classList.remove("hidden");
+  } else {
+    cohortEl.classList.add("hidden");
+  }
+
+  const caution = document.getElementById("r-caution");
+  if (r.flags.painConcern) {
+    caution.textContent = "You selected a pain or health concern as your biggest obstacle. BNL Plus may modify exercises within fitness-coaching scope, but it does not diagnose injuries or provide rehabilitation. Medical clearance may be required before participation.";
+    caution.classList.remove("hidden");
+  } else {
+    caution.classList.add("hidden");
+  }
+
+  const under18 = document.getElementById("r-under18");
+  const applyBtn = document.getElementById("r-cta-apply");
+  if (r.flags.under18) {
+    under18.textContent = "Applicants must be at least 18. Save your Seven-Day Plan and revisit Body Rebuild when you are eligible to apply.";
+    under18.classList.remove("hidden");
+    applyBtn.style.display = "none";
+  } else {
+    under18.classList.add("hidden");
+    applyBtn.style.display = "";
+  }
+
+  setProgress(1);
+}
+
+function CONSSTRAINT_SAFE(key) {
+  return CONSTRAINT_COPY[key] || CONSTRAINT_COPY.scheduleControl;
+}
+
+/* retake */
+document.getElementById("r-retake").addEventListener("click", () => {
+  try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+  answers.fill(null);
+  current = 0;
+  renderQuestion();
+  setPhase("quiz");
+});
+
+/* restore a saved result on revisit */
+(function init() {
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch (e) {}
+  if (saved && saved.contact && saved.result) {
+    renderResult(saved.contact, saved.result);
+    setPhase("result");
+  } else {
+    renderQuestion();
+  }
+})();
+</script>
+
+</body>
+</html>

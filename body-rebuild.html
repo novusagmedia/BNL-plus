@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Body Rebuild | 16-Week Strength and Nutrition System</title>
+<meta name="description" content="See how Body Rebuild combines three required workouts, realistic nutrition, and the right level of support for busy adults 35+." />
+<link rel="canonical" href="https://bnlch.com/body-rebuild" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="BNL Plus" />
+<meta property="og:title" content="Body Rebuild | 16-Week Strength and Nutrition System" />
+<meta property="og:description" content="See how Body Rebuild combines three required workouts, realistic nutrition, and the right level of support for busy adults 35+." />
+<meta property="og:url" content="https://bnlch.com/body-rebuild" />
+<meta property="og:image" content="https://bnlch.com/assets/band-brand.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://bnlch.com/body-rebuild#service",
+    "name": "Body Rebuild",
+    "serviceType": "Online fitness and general nutrition coaching program",
+    "description": "A 16-week online strength and nutrition system for busy adults 35+ with three required workouts per week, one optional Rebuild Accelerator session, Foundation/Build/Performance tracks for Home or Gym, and a realistic nutrition structure.",
+    "provider": { "@id": "https://bnlch.com/#organization" },
+    "areaServed": "US",
+    "audience": {
+      "@type": "PeopleAudience",
+      "audienceType": "Busy adults 35+ returning to structured training"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bnlch.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Body Rebuild", "item": "https://bnlch.com/body-rebuild" }
+    ]
+  }
+]
+</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: "#171717",
+          graphite: "#333333",
+          stone: "#767676",
+          line: "#D7D7D4",
+          mist: "#ECECEA",
+          canvas: "#F7F7F5",
+        },
+        fontFamily: {
+          display: ["Archivo", "Inter", "sans-serif"],
+          body: ["Inter", "sans-serif"],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Inter", sans-serif; }
+  ::selection { background: #000; color: #fff; }
+
+  .display-tight { letter-spacing: -0.03em; line-height: 0.98; }
+  .eyebrow {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.9rem 1.6rem;
+    border-radius: 4px;
+    border: 1px solid #000;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+  .btn-primary { background: #000; color: #fff; }
+  .btn-primary:hover { background: #333333; border-color: #333333; }
+  .btn-secondary { background: transparent; color: #000; }
+  .btn-secondary:hover { background: #000; color: #fff; }
+  .btn-invert { background: #fff; color: #000; border-color: #fff; }
+  .btn-invert:hover { background: #ECECEA; border-color: #ECECEA; }
+  .btn-invert:focus-visible { outline-color: #fff; }
+  .btn-outline-light { background: transparent; color: #fff; border-color: #fff; }
+  .btn-outline-light:hover { background: #fff; color: #000; }
+  .btn-outline-light:focus-visible { outline-color: #fff; }
+
+  .navlink {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333333;
+    transition: color 0.15s ease;
+    padding: 0.25rem 0;
+  }
+  .navlink:hover { color: #000; }
+  .navlink:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+  .navlink[aria-current="page"] { color: #000; font-weight: 600; }
+
+  .footlink {
+    font-size: 0.85rem;
+    color: #767676;
+    transition: color 0.15s ease;
+  }
+  .footlink:hover { color: #000; }
+  .footlink:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.in-view { opacity: 1; transform: none; }
+
+  .hero-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .loaded .hero-line { opacity: 1; transform: none; }
+  .hero-after {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+  }
+  .loaded .hero-after { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal, .hero-line, .hero-after {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+</head>
+
+<body class="bg-white text-graphite antialiased">
+
+<!-- ============ COHORT BANNER ============ -->
+<div class="bg-black text-white text-center px-4 py-2.5">
+  <p class="text-[0.78rem] font-medium tracking-wide">
+    Applications are open for the August 10 Body Rebuild Coaching cohort. Applications close August 7. Limited to 10 participants.
+  </p>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-4" aria-label="BNL Plus — Home">
+      <img src="assets/logo-black.png" alt="BNL Plus" class="h-7 w-auto" />
+    </a>
+    <nav class="hidden lg:flex items-center gap-8" aria-label="Primary">
+      <a class="navlink" href="body-rebuild.html" aria-current="page">Body Rebuild</a>
+      <a class="navlink" href="tiers.html">Compare Tiers</a>
+      <a class="navlink" href="founder.html">Founder Story</a>
+      <a class="navlink" href="faq.html">FAQ</a>
+      <a class="navlink" href="apply.html">Apply</a>
+    </nav>
+    <div class="hidden lg:block">
+      <a href="restart-assessment.html" class="btn btn-primary !py-2.5 !px-5 text-sm">Take the Free Restart Assessment</a>
+    </div>
+    <button id="menu-btn" class="lg:hidden p-2 -mr-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-black" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <svg id="icon-open" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <path d="M2 6h18M2 11h18M2 16h18" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <svg id="icon-close" width="22" height="22" viewBox="0 0 22 22" fill="none" class="hidden" aria-hidden="true">
+        <path d="M4 4l14 14M18 4L4 18" stroke="#000" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-line bg-white">
+    <nav class="px-5 py-4 flex flex-col gap-1" aria-label="Mobile">
+      <a class="navlink py-2.5 border-b border-mist" href="body-rebuild.html" aria-current="page">Body Rebuild</a>
+      <a class="navlink py-2.5 border-b border-mist" href="tiers.html">Compare Tiers</a>
+      <a class="navlink py-2.5 border-b border-mist" href="founder.html">Founder Story</a>
+      <a class="navlink py-2.5 border-b border-mist" href="faq.html">FAQ</a>
+      <a class="navlink py-2.5" href="apply.html">Apply</a>
+      <a href="restart-assessment.html" class="btn btn-primary mt-3 w-full">Take the Free Restart Assessment</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="bg-canvas border-b border-line" aria-labelledby="hero-heading">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-16 pb-16 md:pt-24 md:pb-24">
+    <div class="max-w-4xl">
+      <p class="eyebrow text-stone mb-6 hero-after">Body Rebuild</p>
+      <h1 id="hero-heading" class="font-display font-extrabold display-tight text-black text-4xl sm:text-5xl lg:text-[4.4rem]">
+        <span class="hero-line">A 16-week system for getting strong, leaner, and consistent again.</span>
+      </h1>
+      <p class="hero-after mt-7 max-w-2xl text-[1.05rem] leading-[1.7] text-graphite">
+        Body Rebuild is designed for busy adults 35+ who have been inactive or inconsistent and need a clear way back into structured training.
+      </p>
+      <div class="hero-after mt-9 flex flex-col sm:flex-row gap-3">
+        <a href="restart-assessment.html" class="btn btn-primary">Take the Free Restart Assessment</a>
+        <a href="tiers.html" class="btn btn-secondary">Compare Tiers</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMISE ============ -->
+<section class="bg-white" aria-labelledby="promise-heading">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-28">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div class="lg:col-span-7 reveal">
+        <p class="eyebrow text-stone mb-5">The Promise</p>
+        <h2 id="promise-heading" class="font-display font-extrabold display-tight text-black text-3xl md:text-[2.6rem]">
+          The goal is not to destroy you for 16 weeks. The goal is to rebuild a process you can keep.
+        </h2>
+        <p class="mt-6 text-[1.02rem] leading-[1.7] text-graphite max-w-xl">
+          You will train three required days each week, use a Home or Gym program matched to your level, follow a realistic nutrition structure, and track the evidence that shows whether the plan is working.
+        </p>
+      </div>
+      <div class="lg:col-span-5 reveal" data-delay="120">
+        <figure class="border border-line bg-white p-2 rounded-md">
+          <img src="assets/br-promise.jpg" alt="Elijah carrying a weight plate across the gym floor." class="w-full aspect-[4/5] object-cover object-[center_20%] grayscale rounded-sm" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT IS INCLUDED ============ -->
+<section class="bg-canvas border-y border-line" aria-labelledby="included-heading">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-28">
+    <p class="eyebrow text-stone mb-5 reveal">What Is Included</p>
+    <h2 id="included-heading" class="font-display font-extrabold display-tight text-black text-3xl md:text-[2.6rem] max-w-3xl reveal">
+      Everything is structured. Nothing is random.
+    </h2>
+    <div class="mt-12 border-t border-line">
+      <div class="grid md:grid-cols-12 gap-2 md:gap-8 py-6 border-b border-line reveal">
+        <p class="md:col-span-4 eyebrow text-black pt-1">Three Required Workouts</p>
+        <p class="md:col-span-8 text-[0.98rem] leading-[1.7] text-graphite">Strength training built around squat, hinge, push, pull, single-leg, carry, and core patterns.</p>
+      </div>
+      <div class="grid md:grid-cols-12 gap-2 md:gap-8 py-6 border-b border-line reveal">
+        <p class="md:col-span-4 eyebrow text-black pt-1">One Optional Accelerator</p>
+        <p class="md:col-span-8 text-[0.98rem] leading-[1.7] text-graphite">An optional fourth session for conditioning, movement, or extra work when recovery and schedule allow.</p>
+      </div>
+      <div class="grid md:grid-cols-12 gap-2 md:gap-8 py-6 border-b border-line reveal">
+        <p class="md:col-span-4 eyebrow text-black pt-1">Home or Gym</p>
+        <p class="md:col-span-8 text-[0.98rem] leading-[1.7] text-graphite">Foundation, Build, and Performance tracks are available for both environments.</p>
+      </div>
+      <div class="grid md:grid-cols-12 gap-2 md:gap-8 py-6 border-b border-line reveal">
+        <p class="md:col-span-4 eyebrow text-black pt-1">Realistic Nutrition</p>
+        <p class="md:col-span-8 text-[0.98rem] leading-[1.7] text-graphite">Macro, Portion, or Hybrid methods depending on readiness and tier.</p>
+      </div>
+      <div class="grid md:grid-cols-12 gap-2 md:gap-8 py-6 reveal">
+        <p class="md:col-span-4 eyebrow text-black pt-1">Progress Tracking</p>
+        <p class="md:col-span-8 text-[0.98rem] leading-[1.7] text-graphite">Workout completion, performance, nutrition habits, measurements, and check-ins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRAINING BAND ============ -->
+<section class="relative h-[340px] md:h-[480px] overflow-hidden" aria-label="Training at the gym">
+  <img src="assets/br-band.jpg" alt="Elijah seated in the gym, facing his reflection in the mirror." class="absolute inset-0 w-full h-full object-cover grayscale" loading="lazy" />
+  <div class="absolute inset-0 bg-ink mix-blend-multiply opacity-20" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/25" aria-hidden="true"></div>
+  <div class="absolute bottom-0 left-0 right-0">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 pb-7 flex items-center justify-between gap-4">
+      <span class="h-px flex-1 bg-white/25" aria-hidden="true"></span>
+      <p class="eyebrow text-white">Structured strength for real life</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOME EQUIPMENT ============ -->
+<section class="bg-white" aria-labelledby="equipment-heading">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-16">
+      <div class="lg:col-span-5 reveal">
+        <p class="eyebrow text-stone mb-5">Home Equipment</p>
+        <h2 id="equipment-heading" class="font-display font-extrabold display-tight text-black text-3xl md:text-[2.4rem]">
+          What you need to train at home
+        </h2>
+      </div>
+      <div class="lg:col-span-7 reveal" data-delay="120">
+        <p class="text-[1.02rem] leading-[1.7] text-graphite lg:pt-2 max-w-xl">
+          Adjustable dumbbells, resistance bands, a bench or sturdy chair, and safe floor space. When that equipment is not available, choose the Gym track.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRAINING LEVELS ============ -->
+<section class="bg-canvas border-y border-line" aria-labelledby="levels-heading">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-28">
+    <div class="max-w-3xl reveal">
+      <p class="eyebrow text-stone mb-5">Training Levels</p>
+      <h2 id="levels-heading" class="font-display font-extrabold display-tight text-black text-3xl md:text-[2.6rem]">
+        Your level is assigned from evidence&mdash;not ego.
+      </h2>
+    </div>
+    <div class="mt-14 grid md:grid-cols-3 border-t border-line">
+      <div class="pt-8 pb-4 md:pr-10 md:border-r border-line reveal">
+        <p class="eyebrow text-black mb-4">Foundation</p>
+        <p class="text-[0.98rem] leading-[1.7] text-graphite">For people rebuilding consistency, confidence, work capacity, and basic movement skill.</p>
+      </div>
+      <div class="pt-8 pb-4 md:px-10 md:border-r border-line reveal" data-delay="100">
+        <p class="eyebrow text-black mb-4">Build</p>
+        <p class="text-[0.98rem] leading-[1.7] text-graphite">For people with some recent consistency or previous experience who are ready for structured progression.</p>
+      </div>
+      <div class="pt-8 pb-4 md:pl-10 reveal" data-delay="200">
+        <p class="eyebrow text-black mb-4">Performance</p>
+        <p class="text-[0.98rem] leading-[1.7] text-graphite">For experienced trainees who can use reps in reserve and progressive overload independently and have no unresolved safety issue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NUTRITION ============ -->
+<section class="bg-white" aria-labelledby="nutrition-heading">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-16">
+      <div class="lg:col-span-5 reveal">
+        <p class="eyebrow text-stone mb-5">Nutrition</p>
+        <h2 id="nutrition-heading" class="font-display font-extrabold display-tight text-black text-3xl md:text-[2.4rem]">
+          Nutrition that fits real life
+        </h2>
+      </div>
+      <div class="lg:col-span-7 reveal" data-delay="120">
+        <p class="text-[1.02rem] leading-[1.7] text-graphite lg:pt-2 max-w-xl">
+          Body Rebuild does not use rigid meal plans or medical nutrition therapy. The program uses protein targets, meal structure, portions, food logging when appropriate, grocery and restaurant strategies, and weekly adjustments according to your tier.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUPPORT (dark) ============ -->
+<section class="bg-ink text-white" aria-labelledby="support-heading">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-20 md:py-28">
+    <div class="max-w-3xl reveal">
+      <p class="eyebrow text-line mb-6">Support</p>
+      <h2 id="support-heading" class="font-display font-bold text-white text-3xl md:text-[2.8rem] tracking-[-0.03em] leading-[1.12]">
+        Same program length. Different levels of support.
+      </h2>
+      <p class="mt-8 text-[1.02rem] leading-[1.7] text-mist">
+        Essentials is self-directed. Coaching adds weekly review, written feedback, group accountability, and targeted adjustments. Private adds weekly 1:1 support, faster weekday communication, deeper customization, and a monthly live session.
+      </p>
+      <a href="tiers.html" class="btn btn-outline-light mt-9">Compare Tiers</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS STEPS ============ -->
+<section class="bg-white" aria-labelledby="steps-heading">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-28">
+    <div class="max-w-3xl reveal">
+      <p class="eyebrow text-stone mb-5">The Path In</p>
+      <h2 id="steps-heading" class="font-display font-extrabold display-tight text-black text-3xl md:text-[2.6rem]">
+        What happens after you apply
+      </h2>
+    </div>
+    <ol class="mt-12 border-t border-line max-w-4xl">
+      <li class="flex gap-6 md:gap-10 py-6 border-b border-line items-baseline reveal">
+        <span class="font-display font-extrabold display-tight text-black text-3xl md:text-4xl w-10 shrink-0" aria-hidden="true">1</span>
+        <p class="text-[0.98rem] leading-[1.7] text-graphite">Complete the Restart Assessment.</p>
+      </li>
+      <li class="flex gap-6 md:gap-10 py-6 border-b border-line items-baseline reveal">
+        <span class="font-display font-extrabold display-tight text-black text-3xl md:text-4xl w-10 shrink-0" aria-hidden="true">2</span>
+        <p class="text-[0.98rem] leading-[1.7] text-graphite">Submit the Body Rebuild Application.</p>
+      </li>
+      <li class="flex gap-6 md:gap-10 py-6 border-b border-line items-baseline reveal">
+        <span class="font-display font-extrabold display-tight text-black text-3xl md:text-4xl w-10 shrink-0" aria-hidden="true">3</span>
+        <p class="text-[0.98rem] leading-[1.7] text-graphite">BNL Plus reviews health readiness, goals, schedule, and support needs.</p>
+      </li>
+      <li class="flex gap-6 md:gap-10 py-6 border-b border-line items-baseline reveal">
+        <span class="font-display font-extrabold display-tight text-black text-3xl md:text-4xl w-10 shrink-0" aria-hidden="true">4</span>
+        <p class="text-[0.98rem] leading-[1.7] text-graphite">Approved Essentials applicants receive the direct enrollment route.</p>
+      </li>
+      <li class="flex gap-6 md:gap-10 py-6 border-b border-line items-baseline reveal">
+        <span class="font-display font-extrabold display-tight text-black text-3xl md:text-4xl w-10 shrink-0" aria-hidden="true">5</span>
+        <p class="text-[0.98rem] leading-[1.7] text-graphite">Approved Coaching and Private applicants complete a 30-minute Fit Call.</p>
+      </li>
+      <li class="flex gap-6 md:gap-10 py-6 border-b border-line items-baseline reveal">
+        <span class="font-display font-extrabold display-tight text-black text-3xl md:text-4xl w-10 shrink-0" aria-hidden="true">6</span>
+        <p class="text-[0.98rem] leading-[1.7] text-graphite">Enrollment begins after approval, agreement, required screening, and successful payment.</p>
+      </li>
+    </ol>
+    <p class="mt-10 max-w-3xl text-[0.8rem] leading-relaxed text-stone reveal">
+      Body Rebuild is fitness and general nutrition coaching. It is not medical care, physical therapy, injury rehabilitation, medication management, or medical nutrition therapy.
+    </p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA (black) ============ -->
+<section class="bg-black text-white" aria-labelledby="cta-heading">
+  <div class="max-w-4xl mx-auto px-5 md:px-8 py-20 md:py-28 text-center">
+    <div class="reveal">
+      <h2 id="cta-heading" class="font-display font-extrabold display-tight text-white text-4xl md:text-5xl">
+        Start with the free assessment.
+      </h2>
+      <p class="mt-6 max-w-xl mx-auto text-[1.02rem] leading-[1.7] text-mist">
+        Find your likely training level, biggest constraint, and recommended support path.
+      </p>
+      <div class="mt-9">
+        <a href="restart-assessment.html" class="btn btn-invert">Take the Free Restart Assessment</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-white border-t border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-16 pb-10">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5">
+        <img src="assets/logo-black.png" alt="BNL Plus" class="h-6 w-auto" />
+        <p class="mt-5 font-display font-bold text-black text-lg">Structured strength for real life.</p>
+        <p class="mt-1 text-[0.85rem] text-stone">A Bluffs Nutrition Lounge Brand</p>
+        <p class="mt-6 text-[0.85rem] leading-relaxed text-stone max-w-sm">
+          Online coaching available across the United States. Local Private sessions are available in the Scottsbluff, Nebraska area by appointment.
+        </p>
+      </div>
+      <nav class="lg:col-span-4 grid grid-cols-2 gap-x-8 gap-y-3 content-start" aria-label="Footer">
+        <a class="footlink" href="body-rebuild.html">Body Rebuild</a>
+        <a class="footlink" href="tiers.html">Compare Tiers</a>
+        <a class="footlink" href="founder.html">Founder Story</a>
+        <a class="footlink" href="restart-assessment.html">Restart Assessment</a>
+        <a class="footlink" href="apply.html">Apply</a>
+        <a class="footlink" href="faq.html">FAQ</a>
+        <a class="footlink" href="contact.html">Contact</a>
+        <a class="footlink" href="policies.html">Policies</a>
+      </nav>
+      <div class="lg:col-span-3">
+        <a href="restart-assessment.html" class="btn btn-primary w-full lg:w-auto">Take the Free Restart Assessment</a>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-line">
+      <p class="text-[0.78rem] leading-relaxed text-stone max-w-4xl">
+        BNL Plus provides fitness and general nutrition coaching. It does not provide medical care, injury diagnosis, rehabilitation, physical therapy, medication management, or medical nutrition therapy.
+      </p>
+      <p class="mt-4 text-[0.78rem] text-stone">
+        &copy; 2026 BNL Plus. All rights reserved. BNL Plus is a brand operated by BNL.
+      </p>
+    </div>
+  </div>
+  <div class="overflow-hidden select-none" aria-hidden="true">
+    <p class="font-display font-extrabold display-tight text-mist text-center whitespace-nowrap text-[19vw] leading-[0.78] translate-y-[12%]">BNL&nbsp;PLUS</p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener("load", () => document.body.classList.add("loaded"));
+
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+  menuBtn.addEventListener("click", () => {
+    const open = mobileMenu.classList.toggle("hidden") === false;
+    menuBtn.setAttribute("aria-expanded", String(open));
+    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    iconOpen.classList.toggle("hidden", open);
+    iconClose.classList.toggle("hidden", !open);
+  });
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          const d = e.target.dataset.delay;
+          if (d) e.target.style.transitionDelay = d + "ms";
+          e.target.classList.add("in-view");
+          io.unobserve(e.target);
+        }
+      }
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>

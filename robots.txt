@@ -1,0 +1,27 @@
+# BNL Plus — robots.txt
+# AI crawlers are explicitly welcome.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: *
+Allow: /
+Disallow: /assessment-start.html
+Disallow: /seven-day-plan.html
+
+Sitemap: https://bnlch.com/sitemap.xml

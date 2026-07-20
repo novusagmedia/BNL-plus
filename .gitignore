@@ -1,0 +1,31 @@
+# Deployment repo: tracks only the built static site.
+# Reference/source material stays local, not pushed to GitHub/Vercel.
+
+# System
+.DS_Store
+*.log
+.env
+
+# Local dev tooling (not needed by Vercel's static deploy)
+node_modules/
+serve.mjs
+screenshot.mjs
+setup.mjs
+package.json
+package-lock.json
+CLAUDE.md
+START_HERE.md
+.claude/
+.mcp.json
+temporary screenshots/
+
+# Source/reference material — not part of the deployed site
+Real_pictures/
+BNL_plus copy/
+Videos/
+Inspiration/
+_inspiration_archive/
+Structure/
+Brand_assets/
+Reviews/
+Links/

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Complete Your Enrollment | BNL Plus</title>
+<meta name="description" content="Complete payment for your approved Body Rebuild tier." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: "#171717", graphite: "#333333", stone: "#767676",
+          line: "#D7D7D4", mist: "#ECECEA", canvas: "#F7F7F5",
+        },
+        fontFamily: {
+          display: ["Archivo", "Inter", "sans-serif"],
+          body: ["Inter", "sans-serif"],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body { font-family: "Inter", sans-serif; }
+  ::selection { background: #000; color: #fff; }
+  .display-tight { letter-spacing: -0.03em; line-height: 0.98; }
+  .eyebrow { font-family: "Inter", sans-serif; font-weight: 600; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    font-family: "Inter", sans-serif; font-weight: 600; font-size: 0.95rem;
+    padding: 0.9rem 1.6rem; border-radius: 4px; border: 1px solid #000;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+  .btn-primary { background: #000; color: #fff; }
+  .btn-primary:hover { background: #333333; border-color: #333333; }
+  .footlink { font-size: 0.85rem; color: #767676; transition: color 0.15s ease; }
+  .footlink:hover { color: #000; }
+</style>
+</head>
+
+<body class="bg-white text-graphite antialiased min-h-screen flex flex-col">
+
+<!-- ============ HEADER (minimal, no nav) ============ -->
+<header class="border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-4" aria-label="BNL Plus — Home">
+      <img src="assets/logo-black.png" alt="BNL Plus" class="h-7 w-auto" />
+    </a>
+    <p class="eyebrow text-stone">Private Enrollment Link</p>
+  </div>
+</header>
+
+<main id="main" class="flex-1">
+
+<!-- ============ HERO ============ -->
+<section class="bg-canvas border-b border-line">
+  <div class="max-w-3xl mx-auto px-5 md:px-8 pt-16 pb-12 md:pt-20 md:pb-16 text-center">
+    <p class="eyebrow text-stone mb-5">You're Approved</p>
+    <h1 class="font-display font-extrabold display-tight text-black text-4xl md:text-5xl">Complete your enrollment.</h1>
+    <p class="mt-6 text-[1.02rem] leading-[1.7] text-graphite">
+      Select the tier confirmed in your application review and complete payment below. Payment is completed through Square&rsquo;s secure checkout.
+    </p>
+    <p class="mt-5 text-[0.85rem] leading-relaxed text-stone">
+      Essentials enrolls directly after approval. Coaching and Private enroll after your Body Rebuild Fit Call.
+    </p>
+  </div>
+</section>
+
+<!-- ============ TIER PAYMENT CARDS ============ -->
+<section class="bg-white">
+  <div class="max-w-5xl mx-auto px-5 md:px-8 py-16 md:py-20">
+    <div class="grid md:grid-cols-3 gap-5 items-stretch">
+
+      <!-- Essentials -->
+      <div class="border border-line rounded-md p-7 flex flex-col">
+        <p class="eyebrow text-stone">Essentials</p>
+        <p class="mt-5 font-display font-extrabold display-tight text-black text-4xl">$149 <span class="text-xl align-top text-stone font-bold">&times; 4</span></p>
+        <p class="mt-2 text-[0.8rem] text-stone">$149 today, then three monthly payments of $149.</p>
+        <p class="mt-5 text-[0.9rem] leading-[1.65] text-graphite flex-1">Self-directed 16-week program. Enrolls directly after approval&mdash;no Fit Call required.</p>
+        <a href="https://square.link/u/J4hyUAuY" target="_blank" rel="noopener" class="btn btn-primary mt-7 w-full">Pay &amp; Enroll &mdash; Essentials</a>
+      </div>
+
+      <!-- Coaching -->
+      <div class="border-2 border-black rounded-md p-7 flex flex-col relative">
+        <span class="absolute -top-3 left-6 bg-black text-white text-[0.65rem] font-semibold tracking-[0.14em] uppercase px-3 py-1 rounded-sm">Most Clients</span>
+        <p class="eyebrow text-black">Coaching</p>
+        <p class="mt-5 font-display font-extrabold display-tight text-black text-4xl">$229 <span class="text-xl align-top text-stone font-bold">&times; 4</span></p>
+        <p class="mt-2 text-[0.8rem] text-stone">$229 today, then three monthly payments of $229.</p>
+        <p class="mt-5 text-[0.9rem] leading-[1.65] text-graphite flex-1">Complete your Body Rebuild Fit Call before paying, unless already confirmed on your call.</p>
+        <a href="https://calendar.app.google/YZPhRD3JFNAwvSQr5" target="_blank" rel="noopener" class="text-[0.85rem] font-semibold text-ink underline underline-offset-4 mt-4">Book your Fit Call &rarr;</a>
+        <a href="https://square.link/u/s5J9bTUh" target="_blank" rel="noopener" class="btn btn-primary mt-4 w-full">Pay &amp; Enroll &mdash; Coaching</a>
+      </div>
+
+      <!-- Private -->
+      <div class="border border-line rounded-md p-7 flex flex-col">
+        <p class="eyebrow text-stone">Private</p>
+        <p class="mt-5 font-display font-extrabold display-tight text-black text-4xl">$499 <span class="text-xl align-top text-stone font-bold">&times; 4</span></p>
+        <p class="mt-2 text-[0.8rem] text-stone">$499 today, then three monthly payments of $499.</p>
+        <p class="mt-5 text-[0.9rem] leading-[1.65] text-graphite flex-1">Complete your priority Body Rebuild Fit Call before paying, unless already confirmed on your call.</p>
+        <a href="https://calendar.app.google/YZPhRD3JFNAwvSQr5" target="_blank" rel="noopener" class="text-[0.85rem] font-semibold text-ink underline underline-offset-4 mt-4">Book your Fit Call &rarr;</a>
+        <a href="https://square.link/u/PwRInBxg" target="_blank" rel="noopener" class="btn btn-primary mt-7 w-full">Pay &amp; Enroll &mdash; Private</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT HAPPENS NEXT ============ -->
+<section class="bg-canvas border-y border-line">
+  <div class="max-w-3xl mx-auto px-5 md:px-8 py-14 md:py-16">
+    <p class="eyebrow text-stone mb-5">After Payment</p>
+    <ul class="border-t border-line">
+      <li class="flex gap-4 py-3.5 border-b border-line text-[0.95rem] text-ink"><span class="font-display font-bold" aria-hidden="true">&#8594;</span>You&rsquo;ll receive a payment receipt and the final written agreement.</li>
+      <li class="flex gap-4 py-3.5 border-b border-line text-[0.95rem] text-ink"><span class="font-display font-bold" aria-hidden="true">&#8594;</span>You&rsquo;ll complete the onboarding form and health/readiness screening.</li>
+      <li class="flex gap-4 py-3.5 text-[0.95rem] text-ink"><span class="font-display font-bold" aria-hidden="true">&#8594;</span>You&rsquo;ll get your Everfit setup and Week 1 instructions.</li>
+    </ul>
+    <p class="mt-8 text-[0.8rem] leading-relaxed text-stone">
+      The final written agreement controls cancellation, pause, refund, failed-payment, and late-payment terms. Review those terms before completing payment.
+    </p>
+    <p class="mt-4 text-[0.8rem] leading-relaxed text-stone">
+      Questions about this link or your enrollment? Email <a href="mailto:info@bnlch.com" class="underline">info@bnlch.com</a>.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-white border-t border-line">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <p class="text-[0.78rem] text-stone">&copy; 2026 BNL Plus. All rights reserved. BNL Plus is a brand operated by BNL.</p>
+    <a class="footlink" href="policies.html">Policies</a>
+  </div>
+</footer>
+
+</body>
+</html>

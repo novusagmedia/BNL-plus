@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Seven-Day Restart Plan | BNL Plus</title>
+<meta name="description" content="A simple first week for rebuilding strength, nutrition structure, and consistency. Three workouts, a food audit, three repeatable meals, and an honest review." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: "#171717",
+          graphite: "#333333",
+          stone: "#767676",
+          line: "#D7D7D4",
+          mist: "#ECECEA",
+          canvas: "#F7F7F5",
+        },
+        fontFamily: {
+          display: ["Archivo", "Inter", "sans-serif"],
+          body: ["Inter", "sans-serif"],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: "Inter", sans-serif; }
+  ::selection { background: #000; color: #fff; }
+
+  .display-tight { letter-spacing: -0.03em; line-height: 0.98; }
+  .eyebrow {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.9rem 1.6rem;
+    border-radius: 4px;
+    border: 1px solid #000;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    cursor: pointer;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+  .btn-primary { background: #000; color: #fff; }
+  .btn-primary:hover { background: #333333; border-color: #333333; }
+  .btn-secondary { background: transparent; color: #000; }
+  .btn-secondary:hover { background: #000; color: #fff; }
+  .btn-invert { background: #fff; color: #000; border-color: #fff; }
+  .btn-invert:hover { background: #ECECEA; border-color: #ECECEA; }
+  .btn-invert:focus-visible { outline-color: #fff; }
+
+  .navlink {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333333;
+    transition: color 0.15s ease;
+    padding: 0.25rem 0;
+  }
+  .navlink:hover { color: #000; }
+  .navlink:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+
+  .footlink {
+    font-size: 0.85rem;
+    color: #767676;
+    transition: color 0.15s ease;
+  }
+  .footlink:hover { color: #000; }
+  .footlink:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+
+  .plan-table th, .plan-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #D7D7D4;
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+  .plan-table th {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  .writein { border-bottom: 1px solid #D7D7D4; min-height: 1.9rem; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.in-view { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+
+  @media print {
+    .no-print { display: none !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    body { background: #fff !important; }
+    section { border: none !important; }
+  }
+</style>
+</head>
+
+<body class="bg-white text-graphite antialiased">
+
+<!-- ============ HEADER ============ -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-line no-print">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-4" aria-label="BNL Plus — Home">
+      <img src="assets/logo-black.png" alt="BNL Plus" class="h-7 w-auto" />
+    </a>
+    <p class="eyebrow text-stone hidden sm:block">The Seven-Day Restart Plan</p>
+    <button onclick="window.print()" class="btn btn-secondary !py-2 !px-4 text-sm" type="button">Print / Save as PDF</button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="bg-canvas border-b border-line" aria-labelledby="hero-heading">
+  <div class="max-w-3xl mx-auto px-5 md:px-8 pt-14 pb-12 md:pt-20 md:pb-16">
+    <p class="eyebrow text-stone mb-5">A Bluffs Nutrition Lounge Brand</p>
+    <h1 id="hero-heading" class="font-display font-extrabold display-tight text-black text-4xl md:text-[3.4rem]">The Seven-Day Restart Plan</h1>
+    <p class="mt-4 text-[1.05rem] leading-[1.7] text-graphite">A simple first week for rebuilding strength, nutrition structure, and consistency.</p>
+    <div class="mt-8 border border-line bg-white rounded-md p-6">
+      <p class="eyebrow text-stone mb-3">Your Goal This Week</p>
+      <p class="text-[0.95rem] leading-[1.7] text-graphite">
+        This week is not about proving how hard you can work. It is about proving that you can follow a simple system. Complete the actions, record what happens, and use the information to choose your next step.
+      </p>
+      <p class="mt-4 text-[0.9rem] leading-[1.7] text-ink font-semibold">
+        Minimum standard: schedule three workouts, complete a seven-day food audit, build three repeatable meals, and review the week honestly.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEFORE YOU START ============ -->
+<section class="bg-white" aria-labelledby="before-heading">
+  <div class="max-w-3xl mx-auto px-5 md:px-8 py-12 md:py-16">
+    <h2 id="before-heading" class="font-display font-extrabold display-tight text-black text-2xl md:text-3xl reveal">Before you start</h2>
+    <ul class="mt-6 border-t border-line reveal">
+      <li class="flex gap-4 py-3.5 border-b border-line text-[0.95rem] text-ink"><span class="font-display font-bold" aria-hidden="true">&#8594;</span>Use a safe training environment and stable equipment.</li>
+      <li class="flex gap-4 py-3.5 border-b border-line text-[0.95rem] text-ink"><span class="font-display font-bold" aria-hidden="true">&#8594;</span>Choose weights that leave approximately 2&ndash;3 good repetitions in reserve.</li>
+      <li class="flex gap-4 py-3.5 border-b border-line text-[0.95rem] text-ink"><span class="font-display font-bold" aria-hidden="true">&#8594;</span>Stop for sharp pain, radiating pain, numbness, tingling, chest pain, severe dizziness, or unusual shortness of breath.</li>
+      <li class="flex gap-4 py-3.5 text-[0.95rem] text-ink"><span class="font-display font-bold" aria-hidden="true">&#8594;</span>This guide is educational and is not medical care, diagnosis, rehabilitation, or physical therapy.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ THE SEVEN DAYS ============ -->
+<section class="bg-canvas border-y border-line" aria-labelledby="days-heading">
+  <div class="max-w-3xl mx-auto px-5 md:px-8 py-12 md:py-16">
+    <h2 id="days-heading" class="font-display font-extrabold display-tight text-black text-2xl md:text-3xl reveal">The seven days</h2>
+
+    <div class="mt-8 space-y-5">
+      <div class="border border-line bg-white rounded-md p-6 reveal">
+        <div class="flex items-baseline gap-4">
+          <span class="font-display font-extrabold display-tight text-black text-3xl" aria-hidden="true">1</span>
+          <h3 class="font-display font-bold text-black text-lg">Set the schedule</h3>
+        </div>
+        <ol class="mt-4 space-y-2 text-[0.92rem] leading-[1.65] text-graphite list-decimal pl-5">
+          <li>Choose three exact workout appointments during the next seven days.</li>
+          <li>Choose a backup time for each workout.</li>
+          <li>Decide whether you will train at home or in a gym.</li>
+          <li>Put the appointments on your calendar.</li>
+        </ol>
+      </div>
+
+      <div class="border border-line bg-white rounded-md p-6 reveal">
+        <div class="flex items-baseline gap-4">
+          <span class="font-display font-extrabold display-tight text-black text-3xl" aria-hidden="true">2</span>
+          <h3 class="font-display font-bold text-black text-lg">Complete a food audit</h3>
+        </div>
+        <ol class="mt-4 space-y-2 text-[0.92rem] leading-[1.65] text-graphite list-decimal pl-5">
+          <li>Record every meal, snack, drink, sauce, restaurant meal, and unplanned bite.</li>
+          <li>Do not try to make the day look perfect.</li>
+          <li>Circle where protein was missing.</li>
+          <li>Write down the time of day when hunger or convenience controlled the decision.</li>
+        </ol>
+      </div>
+
+      <div class="border border-line bg-white rounded-md p-6 reveal">
+        <div class="flex items-baseline gap-4">
+          <span class="font-display font-extrabold display-tight text-black text-3xl" aria-hidden="true">3</span>
+          <h3 class="font-display font-bold text-black text-lg">Complete Workout A</h3>
+        </div>
+        <ol class="mt-4 space-y-2 text-[0.92rem] leading-[1.65] text-graphite list-decimal pl-5">
+          <li>Use two working sets per exercise.</li>
+          <li>Choose 8&ndash;12 repetitions unless the exercise notes say otherwise.</li>
+          <li>Finish each set with approximately 2&ndash;3 good repetitions remaining.</li>
+          <li>Record the load, repetitions, and one technique note.</li>
+        </ol>
+      </div>
+
+      <div class="border border-line bg-white rounded-md p-6 reveal">
+        <div class="flex items-baseline gap-4">
+          <span class="font-display font-extrabold display-tight text-black text-3xl" aria-hidden="true">4</span>
+          <h3 class="font-display font-bold text-black text-lg">Build three repeatable meals</h3>
+        </div>
+        <ol class="mt-4 space-y-2 text-[0.92rem] leading-[1.65] text-graphite list-decimal pl-5">
+          <li>Create one breakfast, one lunch, and one dinner you can repeat.</li>
+          <li>Start each meal with a protein source.</li>
+          <li>Add produce, an appropriate carbohydrate, and an intentional amount of fat or flavor.</li>
+          <li>Buy the ingredients or create a restaurant or convenience version.</li>
+        </ol>
+      </div>
+
+      <div class="border border-line bg-white rounded-md p-6 reveal">
+        <div class="flex items-baseline gap-4">
+          <span class="font-display font-extrabold display-tight text-black text-3xl" aria-hidden="true">5</span>
+          <h3 class="font-display font-bold text-black text-lg">Complete Workout B</h3>
+        </div>
+        <ol class="mt-4 space-y-2 text-[0.92rem] leading-[1.65] text-graphite list-decimal pl-5">
+          <li>Repeat the same effort standard.</li>
+          <li>Do not add extra sets because the first workout felt easy.</li>
+          <li>Record where balance, technique, or equipment created difficulty.</li>
+          <li>Use an approved alternative when needed.</li>
+        </ol>
+      </div>
+
+      <div class="border border-line bg-white rounded-md p-6 reveal">
+        <div class="flex items-baseline gap-4">
+          <span class="font-display font-extrabold display-tight text-black text-3xl" aria-hidden="true">6</span>
+          <h3 class="font-display font-bold text-black text-lg">Prepare for the highest-risk day</h3>
+        </div>
+        <ol class="mt-4 space-y-2 text-[0.92rem] leading-[1.65] text-graphite list-decimal pl-5">
+          <li>Identify the event, shift, restaurant meal, weekend habit, or family demand most likely to disrupt the plan.</li>
+          <li>Decide what you will eat before it.</li>
+          <li>Choose the protein anchor and flexible choice.</li>
+          <li>Decide exactly when you will return to normal structure.</li>
+        </ol>
+      </div>
+
+      <div class="border border-line bg-white rounded-md p-6 reveal">
+        <div class="flex items-baseline gap-4">
+          <span class="font-display font-extrabold display-tight text-black text-3xl" aria-hidden="true">7</span>
+          <h3 class="font-display font-bold text-black text-lg">Complete Workout C and review</h3>
+        </div>
+        <ol class="mt-4 space-y-2 text-[0.92rem] leading-[1.65] text-graphite list-decimal pl-5">
+          <li>Complete the final workout.</li>
+          <li>Count workouts completed.</li>
+          <li>Identify the strongest habit and biggest obstacle.</li>
+          <li>Choose the one adjustment that would make next week easier.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKOUT INSTRUCTIONS ============ -->
+<section class="bg-white" aria-labelledby="instructions-heading">
+  <div class="max-w-3xl mx-auto px-5 md:px-8 py-12 md:py-16">
+    <h2 id="instructions-heading" class="font-display font-extrabold display-tight text-black text-2xl md:text-3xl reveal">Workout instructions</h2>
+    <div class="mt-6 overflow-x-auto reveal">
+      <table class="plan-table w-full border-t border-line">
+        <tbody>
+          <tr><th scope="row" class="w-40">Sets</th><td>2 working sets per exercise</td></tr>
+          <tr><th scope="row">Repetitions</th><td>8&ndash;12 for most movements; 20&ndash;30 seconds for planks or carries</td></tr>
+          <tr><th scope="row">Effort</th><td>Stop with approximately 2&ndash;3 good repetitions remaining</td></tr>
+          <tr><th scope="row">Rest</th><td>60&ndash;90 seconds; longer when technique or breathing requires it</td></tr>
+          <tr><th scope="row">Progression</th><td>Use the same weight until you reach the top of the range with clean technique</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-5 text-[0.9rem] leading-[1.7] text-stone reveal">
+      Home equipment: adjustable dumbbells, resistance bands, a bench or sturdy chair, and safe floor space.
+    </p>
+  </div>
+</section>
+
+<!-- ============ WORKOUTS A/B/C ============ -->
+<section class="bg-canvas border-y border-line" aria-labelledby="workouts-heading">
+  <div class="max-w-3xl mx-auto px-5 md:px-8 py-12 md:py-16">
+    <h2 id="workouts-heading" class="font-display font-extrabold display-tight text-black text-2xl md:text-3xl reveal">The three workouts</h2>
+
+    <h3 class="mt-8 font-display font-bold text-black text-lg reveal">Workout A</h3>
+    <div class="mt-3 overflow-x-auto reveal">
+      <table class="plan-table w-full min-w-[560px] border-t border-line bg-white rounded-md">
+        <thead><tr><th scope="col">Movement</th><th scope="col">Home option</th><th scope="col">Gym option</th></tr></thead>
+        <tbody>
+          <tr><td>Squat pattern</td><td>Goblet squat to bench or chair</td><td>Leg press or goblet squat</td></tr>
+          <tr><td>Horizontal push</td><td>Dumbbell floor press or incline push-up</td><td>Machine or dumbbell chest press</td></tr>
+          <tr><td>Horizontal pull</td><td>One-arm dumbbell row or band row</td><td>Seated cable row</td></tr>
+          <tr><td>Hinge pattern</td><td>Dumbbell Romanian deadlift</td><td>Romanian deadlift or cable pull-through</td></tr>
+          <tr><td>Core</td><td>Dead bug</td><td>Pallof press or dead bug</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="mt-8 font-display font-bold text-black text-lg reveal">Workout B</h3>
+    <div class="mt-3 overflow-x-auto reveal">
+      <table class="plan-table w-full min-w-[560px] border-t border-line bg-white rounded-md">
+        <thead><tr><th scope="col">Movement</th><th scope="col">Home option</th><th scope="col">Gym option</th></tr></thead>
+        <tbody>
+          <tr><td>Single-leg</td><td>Supported reverse lunge or split squat</td><td>Supported split squat or step-up</td></tr>
+          <tr><td>Vertical push</td><td>Seated dumbbell shoulder press</td><td>Machine or dumbbell shoulder press</td></tr>
+          <tr><td>Vertical pull</td><td>Band pulldown</td><td>Lat pulldown</td></tr>
+          <tr><td>Glute pattern</td><td>Glute bridge or dumbbell hip thrust</td><td>Hip thrust or glute bridge</td></tr>
+          <tr><td>Carry or core</td><td>Dumbbell farmer carry or plank</td><td>Farmer carry or cable carry</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="mt-8 font-display font-bold text-black text-lg reveal">Workout C</h3>
+    <div class="mt-3 overflow-x-auto reveal">
+      <table class="plan-table w-full min-w-[560px] border-t border-line bg-white rounded-md">
+        <thead><tr><th scope="col">Movement</th><th scope="col">Home option</th><th scope="col">Gym option</th></tr></thead>
+        <tbody>
+          <tr><td>Squat pattern</td><td>Box squat or goblet squat</td><td>Leg press or box squat</td></tr>
+          <tr><td>Chest press</td><td>Incline push-up or dumbbell bench press</td><td>Machine or dumbbell chest press</td></tr>
+          <tr><td>Row</td><td>Band row or chest-supported dumbbell row</td><td>Chest-supported row</td></tr>
+          <tr><td>Hinge pattern</td><td>Dumbbell Romanian deadlift</td><td>Cable pull-through or Romanian deadlift</td></tr>
+          <tr><td>Core</td><td>Plank</td><td>Pallof press or plank</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOD AUDIT ============ -->
+<section class="bg-white" aria-labelledby="audit-heading">
+  <div class="max-w-3xl mx-auto px-5 md:px-8 py-12 md:py-16">
+    <h2 id="audit-heading" class="font-display font-extrabold display-tight text-black text-2xl md:text-3xl reveal">Seven-day food audit</h2>
+    <div class="mt-6 overflow-x-auto reveal">
+      <table class="plan-table w-full min-w-[640px] border-t border-line">
+        <thead>
+          <tr>
+            <th scope="col">Day</th><th scope="col">Logged?</th><th scope="col">Protein</th>
+            <th scope="col">Produce</th><th scope="col">Water</th><th scope="col">Highest-risk meal</th><th scope="col">Main lesson</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WEEKLY REVIEW ============ -->
+<section class="bg-canvas border-y border-line" aria-labelledby="review-heading">
+  <div class="max-w-3xl mx-auto px-5 md:px-8 py-12 md:py-16">
+    <h2 id="review-heading" class="font-display font-extrabold display-tight text-black text-2xl md:text-3xl reveal">Weekly review</h2>
+    <dl class="mt-6 space-y-5 reveal">
+      <div><dt class="text-[0.9rem] font-semibold text-ink mb-1">Workouts completed</dt><dd class="writein"></dd></div>
+      <div><dt class="text-[0.9rem] font-semibold text-ink mb-1">Best exercise progression</dt><dd class="writein"></dd></div>
+      <div><dt class="text-[0.9rem] font-semibold text-ink mb-1">Strongest nutrition habit</dt><dd class="writein"></dd></div>
+      <div><dt class="text-[0.9rem] font-semibold text-ink mb-1">Biggest obstacle</dt><dd class="writein"></dd></div>
+      <div><dt class="text-[0.9rem] font-semibold text-ink mb-1">Lowest-energy day</dt><dd class="writein"></dd></div>
+      <div><dt class="text-[0.9rem] font-semibold text-ink mb-1">Highest-risk meal or event</dt><dd class="writein"></dd></div>
+      <div><dt class="text-[0.9rem] font-semibold text-ink mb-1">The one change that would make next week easier</dt><dd class="writein"></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ NEXT STEP (black) ============ -->
+<section class="bg-black text-white no-print" aria-labelledby="cta-heading">
+  <div class="max-w-4xl mx-auto px-5 md:px-8 py-16 md:py-24 text-center">
+    <div class="reveal">
+      <p class="eyebrow text-stone mb-5">Your Next Step</p>
+      <h2 id="cta-heading" class="font-display font-extrabold display-tight text-white text-3xl md:text-5xl">
+        The Seven-Day Restart Plan shows whether you can begin. Body Rebuild gives you the complete 16-week system.
+      </h2>
+      <p class="mt-6 max-w-xl mx-auto text-[1.02rem] leading-[1.7] text-mist">
+        Apply so BNL Plus can confirm your correct training level and whether Essentials, Coaching, or Private is the best fit.
+      </p>
+      <div class="mt-9">
+        <a href="apply.html" class="btn btn-invert">Find My Best Body Rebuild Tier</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER (slim) ============ -->
+<footer class="bg-white border-t border-line no-print">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <p class="text-[0.78rem] text-stone">&copy; 2026 BNL Plus. All rights reserved. A Bluffs Nutrition Lounge Brand.</p>
+    <nav class="flex gap-6" aria-label="Footer">
+      <a class="footlink" href="index.html">Home</a>
+      <a class="footlink" href="body-rebuild.html">Body Rebuild</a>
+      <a class="footlink" href="apply.html">Apply</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add("in-view");
+          io.unobserve(e.target);
+        }
+      }
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>
