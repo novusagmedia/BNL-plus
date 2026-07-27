@@ -33,7 +33,7 @@
       { "@type": "Question", "name": "What is included in Coaching?", "acceptedAnswer": { "@type": "Answer", "text": "Coaching includes personalized onboarding, weekly check-ins, individual written feedback, group accountability, Sunday group calls, one form video review per week, personalized starting nutrition targets, and targeted adjustments." } },
       { "@type": "Question", "name": "What is included in Private?", "acceptedAnswer": { "@type": "Answer", "text": "Private includes weekly 1:1 calls, same-business-day weekday support under the cutoff, deeper training and nutrition customization, up to two form reviews per week, travel and event strategy, and one monthly local or virtual live session." } },
       { "@type": "Question", "name": "Are results guaranteed?", "acceptedAnswer": { "@type": "Answer", "text": "No specific weight loss, strength number, or visual result is guaranteed. Coaching and Private may include an effort-based continuation guarantee subject to the final written agreement and documented execution requirements." } },
-      { "@type": "Question", "name": "When does the next Coaching cohort start?", "acceptedAnswer": { "@type": "Answer", "text": "The next Coaching cohort is planned for August 10, 2026. Applications close August 7. Dates may be updated before enrollment is finalized." } },
+      { "@type": "Question", "name": "When does the next Coaching cohort start?", "acceptedAnswer": { "@type": "Answer", "text": "Applications are open for the next Coaching cohort. Cohort dates are announced before each start, and your start date is confirmed with you when you apply. Coaching is limited to 10 participants per cohort." } },
       { "@type": "Question", "name": "How much does Body Rebuild cost?", "acceptedAnswer": { "@type": "Answer", "text": "Essentials is four payments of $149. Coaching is four payments of $229. Private is four payments of $499." } },
       { "@type": "Question", "name": "Can I cancel after enrolling?", "acceptedAnswer": { "@type": "Answer", "text": "The final written agreement controls cancellation, pause, refund, failed-payment, and late-payment terms. Review those terms before completing payment." } },
       { "@type": "Question", "name": "What happens after Week 16?", "acceptedAnswer": { "@type": "Answer", "text": "You may complete the program, renew another focused 16-week phase, or move into an approved BNL Plus continuity option based on your progress and support needs." } }
@@ -203,8 +203,8 @@
 
 <!-- ============ COHORT BANNER ============ -->
 <div class="bg-black text-white text-center px-4 py-2.5">
-  <p class="text-[0.78rem] font-medium tracking-wide">
-    Applications are open for the August 10 Body Rebuild Coaching cohort. Applications close August 7. Limited to 10 participants.
+  <p class="text-[0.78rem] font-medium tracking-wide" data-cohort="banner">
+    Applications are open for the next Body Rebuild Coaching cohort. Limited to 10 participants.
   </p>
 </div>
 
@@ -332,7 +332,7 @@
       </details>
       <details class="faq-item">
         <summary>When does the next Coaching cohort start?<span class="faq-icon" aria-hidden="true">+</span></summary>
-        <p class="faq-a">The next Coaching cohort is planned for August 10, 2026. Applications close August 7. Dates may be updated before enrollment is finalized.</p>
+        <p class="faq-a" data-cohort="faq">Applications are open for the next Coaching cohort. Cohort dates are announced before each start, and your start date is confirmed with you when you apply.</p>
       </details>
       <details class="faq-item">
         <summary>How much does Body Rebuild cost?<span class="faq-icon" aria-hidden="true">+</span></summary>
@@ -439,6 +439,7 @@
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 </script>
 
+<script defer src="/assets/cohort.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

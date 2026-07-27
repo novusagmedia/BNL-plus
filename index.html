@@ -188,8 +188,8 @@
 
 <!-- ============ COHORT BANNER ============ -->
 <div class="bg-black text-white text-center px-4 py-2.5">
-  <p class="text-[0.78rem] font-medium tracking-wide">
-    Applications are open for the August 10 Body Rebuild Coaching cohort. Applications close August 7. Limited to 10 participants.
+  <p class="text-[0.78rem] font-medium tracking-wide" data-cohort="banner">
+    Applications are open for the next Body Rebuild Coaching cohort. Limited to 10 participants.
   </p>
 </div>
 
@@ -258,7 +258,7 @@
         <a href="tiers.html" class="btn btn-outline-light">Compare Body Rebuild Tiers</a>
       </div>
       <p class="hero-after mt-8 text-[0.9rem] leading-relaxed text-white/75">
-        <span class="text-white font-semibold">Next Coaching cohort &mdash; August 10, 2026.</span> Applications close August 7. Limited to 10 participants.
+        <span class="text-white font-semibold" data-cohort="hero-lead">Applications are open for the next Coaching cohort.</span><span data-cohort="hero-rest"> Limited to 10 participants.</span>
       </p>
     </div>
   </div>
@@ -637,6 +637,7 @@
   document.querySelectorAll(".reveal, .track-fill").forEach((el) => io.observe(el));
 </script>
 
+<script defer src="/assets/cohort.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

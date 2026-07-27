@@ -1,0 +1,25 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+
+  "installCommand": "npm install --omit=dev",
+
+  "functions": {
+    "api/**/*.mjs": {
+      "maxDuration": 15
+    }
+  },
+
+  "rewrites": [
+    {
+      "source": "/restart-assessment/result",
+      "destination": "/api/restart-assessment/result"
+    }
+  ],
+
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "no-store" }]
+    }
+  ]
+}

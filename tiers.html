@@ -204,8 +204,8 @@
 
 <!-- ============ COHORT BANNER ============ -->
 <div class="bg-black text-white text-center px-4 py-2.5">
-  <p class="text-[0.78rem] font-medium tracking-wide">
-    Applications are open for the August 10 Body Rebuild Coaching cohort. Applications close August 7. Limited to 10 participants.
+  <p class="text-[0.78rem] font-medium tracking-wide" data-cohort="banner">
+    Applications are open for the next Body Rebuild Coaching cohort. Limited to 10 participants.
   </p>
 </div>
 
@@ -379,8 +379,8 @@
           Choose Coaching when weekly review, group accountability, personalized starting nutrition targets, written feedback, one weekly form review, and targeted adjustments will materially improve execution.
         </p>
         <p class="mt-4 text-[0.85rem] text-stone">One scheduled group. Maximum 10 participants.</p>
-        <p class="mt-1 text-[0.85rem] text-stone">Next cohort planned for August 10, 2026. Applications close August 7.</p>
-        <a href="apply.html?interest=coaching" class="btn btn-primary mt-7">Apply for the August Cohort</a>
+        <p class="mt-1 text-[0.85rem] text-stone" data-cohort="tiers-detail">Cohort dates are confirmed before enrollment. Applications are open now.</p>
+        <a href="apply.html?interest=coaching" class="btn btn-primary mt-7" data-cohort="cta">Apply for the Next Cohort</a>
       </div>
     </div>
   </div>
@@ -523,6 +523,7 @@
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 </script>
 
+<script defer src="/assets/cohort.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

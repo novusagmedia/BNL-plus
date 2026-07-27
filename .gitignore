@@ -1,19 +1,23 @@
-# Deployment repo: tracks only the built static site.
+# Deployment repo: tracks the static site plus the /api serverless functions.
 # Reference/source material stays local, not pushed to GitHub/Vercel.
 
 # System
 .DS_Store
 *.log
 .env
+.env.*
+!.env.example
 
-# Local dev tooling (not needed by Vercel's static deploy)
+# Local dev tooling (not needed by Vercel's deploy)
 node_modules/
 serve.mjs
 screenshot.mjs
 setup.mjs
-package.json
-package-lock.json
 CLAUDE.md
+
+# package.json / package-lock.json ARE tracked: the /api functions need `pg`
+# at runtime. vercel.json pins the install to `--omit=dev` so puppeteer (and
+# its Chrome download) never runs on Vercel.
 START_HERE.md
 .claude/
 .mcp.json
@@ -29,3 +33,9 @@ Structure/
 Brand_assets/
 Reviews/
 Links/
+
+# Reference material for the CRM build (field IDs are not secrets, but this
+# folder holds the handoff doc and is not part of the deployed site).
+GO-HIGH-LEVEL/
+.vercel
+.env*

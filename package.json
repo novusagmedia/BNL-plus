@@ -1,0 +1,16 @@
+{
+  "name": "bnl",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test \"api/**/*.test.mjs\""
+  },
+  "dependencies": {
+    "pg": "^8.22.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.4",
+    "puppeteer": "^25.1.0"
+  }
+}

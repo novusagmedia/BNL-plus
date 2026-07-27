@@ -142,6 +142,9 @@
   .field .err { display: none; color: #171717; font-weight: 600; font-size: 0.78rem; margin-top: 0.35rem; }
   .field.invalid input, .field.invalid select { border-color: #000; background: #ECECEA; }
   .field.invalid .err { display: block; }
+  /* Form-level failures (server unreachable, save failed). Monochrome to match
+     the field errors — this brand does not use red alert styling. */
+  #gate-error { color: #171717; font-weight: 600; font-size: 0.85rem; border: 1px solid #000; background: #ECECEA; border-radius: 4px; padding: 0.8rem 0.9rem; }
 
   .consent {
     display: flex;
@@ -238,12 +241,12 @@
           <label for="f-age">Age range</label>
           <select id="f-age" name="ageRange" required>
             <option value="">Select&hellip;</option>
-            <option value="under18">Under 18</option>
-            <option value="18to34">18&ndash;34</option>
-            <option value="35to44">35&ndash;44</option>
-            <option value="45to54">45&ndash;54</option>
-            <option value="55to64">55&ndash;64</option>
-            <option value="65plus">65+</option>
+            <option value="Under 18">Under 18</option>
+            <option value="18-34">18&ndash;34</option>
+            <option value="35-44">35&ndash;44</option>
+            <option value="45-54">45&ndash;54</option>
+            <option value="55-64">55&ndash;64</option>
+            <option value="65+">65+</option>
           </select>
           <p class="err">Select your age range.</p>
         </div>
@@ -251,10 +254,10 @@
           <label for="f-env">Where will you train?</label>
           <select id="f-env" name="environment" required>
             <option value="">Select&hellip;</option>
-            <option value="home">At home</option>
-            <option value="gym">At a gym</option>
-            <option value="both">Both</option>
-            <option value="notSure">Not sure yet</option>
+            <option value="Home">At home</option>
+            <option value="Gym">At a gym</option>
+            <option value="Both">Both</option>
+            <option value="Not sure">Not sure yet</option>
           </select>
           <p class="err">Select a training environment.</p>
         </div>
@@ -262,10 +265,10 @@
           <label for="f-goal">Main goal</label>
           <select id="f-goal" name="mainGoal" required>
             <option value="">Select&hellip;</option>
-            <option value="loseFat">Lose fat</option>
-            <option value="rebuildStrength">Rebuild strength</option>
-            <option value="both">Lose fat and rebuild strength</option>
-            <option value="energyConsistency">More energy and consistency</option>
+            <option value="Lose fat">Lose fat</option>
+            <option value="Rebuild strength">Rebuild strength</option>
+            <option value="Lose fat and rebuild strength">Lose fat and rebuild strength</option>
+            <option value="More energy and consistency">More energy and consistency</option>
           </select>
           <p class="err">Select your main goal.</p>
         </div>
@@ -273,13 +276,13 @@
           <label for="f-obstacle">Biggest obstacle</label>
           <select id="f-obstacle" name="biggestObstacle" required>
             <option value="">Select&hellip;</option>
-            <option value="schedule">My schedule keeps winning</option>
-            <option value="unsureWhatToDo">I am not sure what to do</option>
-            <option value="nutrition">Nutrition falls apart</option>
-            <option value="energyRecovery">Low energy or slow recovery</option>
-            <option value="accountability">I do not follow through alone</option>
-            <option value="painConcern">A pain or health concern</option>
-            <option value="other">Something else</option>
+            <option value="Schedule">My schedule keeps winning</option>
+            <option value="Unsure what to do">I am not sure what to do</option>
+            <option value="Nutrition">Nutrition falls apart</option>
+            <option value="Energy or recovery">Low energy or slow recovery</option>
+            <option value="Accountability">I do not follow through alone</option>
+            <option value="Pain or concern">A pain or health concern</option>
+            <option value="Other">Something else</option>
           </select>
           <p class="err">Select your biggest obstacle.</p>
         </div>
@@ -296,6 +299,7 @@
             <span>Optional: I agree to receive a small number of text messages from BNL Plus. Message and data rates may apply. Reply STOP to opt out.</span>
           </label>
         </div>
+        <p id="gate-error" class="hidden" role="alert" aria-live="polite"></p>
         <button type="submit" class="btn btn-primary w-full !py-4 mt-2">Reveal My Result</button>
         <p class="text-[0.78rem] text-stone text-center">Your result and Seven-Day Plan are delivered before any sales call or application.</p>
       </form>
@@ -420,13 +424,16 @@ const CONSTRAINT_FALLBACK_ORDER = [
   "energyRecovery", "strengthConfidence", "accountability",
 ];
 
+/* Keyed by the canonical obstacle values the form now submits (§8.2). The
+   server holds the authoritative copy of this map in api/_lib/constants.mjs —
+   the two must stay in step, and the scoring fixtures guard the server side. */
 const OBSTACLE_TO_CATEGORY = {
-  schedule: "scheduleControl",
-  unsureWhatToDo: "strengthConfidence",
-  nutrition: "nutritionStructure",
-  energyRecovery: "energyRecovery",
-  accountability: "accountability",
-  painConcern: "energyRecovery",
+  "Schedule": "scheduleControl",
+  "Unsure what to do": "strengthConfidence",
+  "Nutrition": "nutritionStructure",
+  "Energy or recovery": "energyRecovery",
+  "Accountability": "accountability",
+  "Pain or concern": "energyRecovery",
 };
 
 const PRICES = {
@@ -435,7 +442,9 @@ const PRICES = {
   private: { monthly: 499, payments: 4, total: 1996 },
 };
 
-const COHORT = { status: "open", startDate: "August 10, 2026", applicationDeadline: "August 7, 2026", capacity: 10 };
+/* Cohort dates live in assets/cohort.js so one edit updates the whole site.
+   Applications never close: once a deadline passes, every surface falls back to
+   evergreen "next cohort" copy rather than advertising a date already gone. */
 
 function calculateResult(answers, context) {
   const categories = {};
@@ -465,11 +474,11 @@ function calculateResult(answers, context) {
   return {
     categories, restartReadiness, supportNeed, readiness, level, supportTier, constraint,
     price: PRICES[supportTier],
-    cohortBlock: supportTier === "coaching" ? COHORT : null,
+    showCohort: supportTier === "coaching",
     flags: {
-      under18: context.ageRange === "under18",
-      painConcern: context.biggestObstacle === "painConcern",
-      applicationCtaAllowed: context.ageRange !== "under18",
+      under18: context.ageRange === "Under 18",
+      painConcern: context.biggestObstacle === "Pain or concern",
+      applicationCtaAllowed: context.ageRange !== "Under 18",
     },
   };
 }
@@ -573,6 +582,13 @@ function fieldValue(name) {
   return el.type === "checkbox" ? el.checked : el.value.trim();
 }
 
+/* The server can replace a field's message with its own; snapshot the authored
+   copy first so client-side validation restores it afterwards. */
+const DEFAULT_FIELD_ERRORS = new Map();
+els.form.querySelectorAll("[data-field] .err").forEach((el) => {
+  DEFAULT_FIELD_ERRORS.set(el, el.textContent);
+});
+
 function validateGate() {
   let ok = true;
   const checks = {
@@ -588,21 +604,140 @@ function validateGate() {
   for (const [name, test] of Object.entries(checks)) {
     const wrap = els.form.querySelector(`[data-field="${name}"]`);
     const pass = test(fieldValue(name));
+    const err = wrap.querySelector(".err");
+    if (err && DEFAULT_FIELD_ERRORS.has(err)) err.textContent = DEFAULT_FIELD_ERRORS.get(err);
     wrap.classList.toggle("invalid", !pass);
     if (!pass) ok = false;
   }
   return ok;
 }
 
-/* Hook: wire this to the CRM / email platform when the live stack is chosen.
-   Receives the full lead payload (contact + answers + computed result). */
-function submitLead(payload) {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(payload)); } catch (e) {}
+/* ============ lead delivery ============
+   Posts to our own server, which is the authority: it re-scores from the raw
+   answers, stores the submission, and syncs GoHighLevel (handoff §4, §11).
+   The on-screen result below is rendered from the browser's own calculation
+   for instant feedback, but nothing is *stored* or *emailed* from it. */
+const SUBMIT_ENDPOINT = "/api/restart-assessment/submit";
+const SUBMISSION_ID_KEY = "bnl_assessment_submission_id";
+
+/* §9.1 — one id per visitor per assessment, created before the first attempt
+   and reused for double-clicks, retries, and refresh recovery. Generating a
+   new one on retry is exactly how duplicate leads happen. */
+function clientSubmissionId() {
+  let id = null;
+  try { id = localStorage.getItem(SUBMISSION_ID_KEY); } catch (e) {}
+  if (!id) {
+    id = (crypto.randomUUID && crypto.randomUUID()) || fallbackUuid();
+    try { localStorage.setItem(SUBMISSION_ID_KEY, id); } catch (e) {}
+  }
+  return id;
 }
 
-els.form.addEventListener("submit", (e) => {
+function fallbackUuid() {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
+  });
+}
+
+function buildPayload() {
+  const params = new URLSearchParams(window.location.search);
+  const answerMap = {};
+  answers.forEach((value, i) => { answerMap[`q${i + 1}`] = value; });
+
+  const attribution = { sourcePage: window.location.href.split("?")[0] };
+  if (document.referrer) attribution.referrer = document.referrer;
+  const utm = {
+    utm_source: "utmSource", utm_medium: "utmMedium", utm_campaign: "utmCampaign",
+    utm_content: "utmContent", utm_term: "utmTerm",
+  };
+  for (const [param, key] of Object.entries(utm)) {
+    if (params.get(param)) attribution[key] = params.get(param);
+  }
+
+  return {
+    clientSubmissionId: clientSubmissionId(),
+    contact: {
+      firstName: fieldValue("firstName"),
+      email: fieldValue("email"),
+      phone: fieldValue("phone"),
+    },
+    segmentation: {
+      ageRange: fieldValue("ageRange"),
+      trainingEnvironment: fieldValue("environment"),
+      mainGoal: fieldValue("mainGoal"),
+      biggestObstacle: fieldValue("biggestObstacle"),
+    },
+    consent: {
+      email: fieldValue("emailConsent"),
+      sms: fieldValue("smsConsent"),
+      consentedAt: new Date().toISOString(),
+    },
+    answers: answerMap,
+    attribution,
+  };
+}
+
+/* Map server field paths back onto the gate's [data-field] wrappers so a
+   server-side rejection highlights the same input the client would have. */
+const SERVER_FIELD_MAP = {
+  "contact.firstName": "firstName",
+  "contact.email": "email",
+  "contact.phone": "phone",
+  "segmentation.ageRange": "ageRange",
+  "segmentation.trainingEnvironment": "environment",
+  "segmentation.mainGoal": "mainGoal",
+  "segmentation.biggestObstacle": "biggestObstacle",
+  "consent.email": "emailConsent",
+  "consent.sms": "smsConsent",
+};
+
+function showServerErrors(fieldErrors) {
+  let firstInvalid = null;
+  for (const [path, message] of Object.entries(fieldErrors || {})) {
+    const name = SERVER_FIELD_MAP[path];
+    if (!name) continue;
+    const wrap = els.form.querySelector(`[data-field="${name}"]`);
+    if (!wrap) continue;
+    const err = wrap.querySelector(".err");
+    if (err) err.textContent = message;
+    wrap.classList.add("invalid");
+    if (!firstInvalid) firstInvalid = wrap;
+  }
+  if (firstInvalid) firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+  return Boolean(firstInvalid);
+}
+
+/* §10 — button states. The label change is the only signal a visitor gets
+   that something is happening, so it must be set before the request starts. */
+const submitBtn = els.form.querySelector('button[type="submit"]');
+const SUBMIT_LABEL = submitBtn ? submitBtn.textContent : "Reveal My Result";
+
+function setSubmitting(isSubmitting) {
+  if (!submitBtn) return;
+  submitBtn.disabled = isSubmitting;
+  submitBtn.setAttribute("aria-busy", isSubmitting ? "true" : "false");
+  submitBtn.textContent = isSubmitting ? "Calculating Your Result…" : SUBMIT_LABEL;
+}
+
+const formError = document.getElementById("gate-error");
+function setFormError(message) {
+  if (!formError) return;
+  formError.textContent = message || "";
+  formError.classList.toggle("hidden", !message);
+}
+
+let submitting = false;
+
+els.form.addEventListener("submit", async (e) => {
   e.preventDefault();
+  if (submitting) return; // §10.4 — a second click must not start a second request
   if (!validateGate()) return;
+
+  submitting = true;
+  setSubmitting(true);
+  setFormError("");
+
   const contact = {
     firstName: fieldValue("firstName"),
     email: fieldValue("email"),
@@ -615,10 +750,48 @@ els.form.addEventListener("submit", (e) => {
     smsConsent: fieldValue("smsConsent"),
     submittedAt: new Date().toISOString(),
   };
-  const result = calculateResult(answers, contact);
-  submitLead({ version: "1.0", contact, answers: answers.slice(), result });
-  renderResult(contact, result);
-  setPhase("result");
+
+  try {
+    const response = await fetch(SUBMIT_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(buildPayload()),
+    });
+    const data = await response.json().catch(() => ({}));
+
+    if (response.status === 422) {
+      if (!showServerErrors(data.fieldErrors)) {
+        setFormError("Please check your answers and try again.");
+      }
+      return;
+    }
+
+    if (!response.ok || !data.success) {
+      // §20.2 — the same submission id is kept so retrying cannot duplicate.
+      setFormError(data.message || "We could not save your result. Please try again.");
+      return;
+    }
+
+    const result = calculateResult(answers, contact);
+    renderResult(contact, result);
+    setPhase("result");
+
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        version: "2.0",
+        contact,
+        answers: answers.slice(),
+        result,
+        submissionId: data.submissionId,
+        resultUrl: data.resultUrl,
+      }));
+    } catch (err) {}
+  } catch (err) {
+    setFormError("We could not reach the server. Check your connection and try again.");
+  } finally {
+    submitting = false;
+    setSubmitting(false);
+  }
 });
 
 /* ============ result ============ */
@@ -654,8 +827,12 @@ function renderResult(contact, r) {
   document.getElementById("r-tier-desc").textContent = tier.desc;
 
   const cohortEl = document.getElementById("r-cohort");
-  if (r.cohortBlock) {
-    cohortEl.textContent = `Planned start: ${r.cohortBlock.startDate} · Applications close: ${r.cohortBlock.applicationDeadline} · Capacity: ${r.cohortBlock.capacity}`;
+  // `cohortBlock` is read for results restored from an earlier version's
+  // localStorage; new results use showCohort.
+  if (r.showCohort ?? Boolean(r.cohortBlock)) {
+    cohortEl.textContent = window.BNL_COHORT
+      ? window.BNL_COHORT.resultLine()
+      : "Applications are open for the next Coaching cohort.";
     cohortEl.classList.remove("hidden");
   } else {
     cohortEl.classList.add("hidden");
@@ -689,9 +866,15 @@ function CONSSTRAINT_SAFE(key) {
 
 /* retake */
 document.getElementById("r-retake").addEventListener("click", () => {
-  try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+    // A retake is a genuinely new assessment (§13.3), so it needs its own
+    // submission id — reusing the old one would replay the stored result.
+    localStorage.removeItem(SUBMISSION_ID_KEY);
+  } catch (e) {}
   answers.fill(null);
   current = 0;
+  setFormError("");
   renderQuestion();
   setPhase("quiz");
 });
@@ -709,6 +892,7 @@ document.getElementById("r-retake").addEventListener("click", () => {
 })();
 </script>
 
+<script defer src="/assets/cohort.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
