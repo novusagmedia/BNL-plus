@@ -27,7 +27,7 @@ import {
   UNDER_18_COPY,
 } from "../_lib/result-copy.mjs";
 
-const PLAN_URL = () => process.env.SEVEN_DAY_PLAN_URL || "/seven-day-plan.html";
+const PLAN_URL = () => process.env.SEVEN_DAY_PLAN_URL || "/seven-day-plan";
 
 /** Escape everything interpolated into HTML. First names contain apostrophes. */
 function esc(value) {
@@ -97,11 +97,11 @@ function layout({ title, body }) {
 
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-line">
   <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16">
-    <a href="/index.html" class="flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-4" aria-label="BNL Plus — Home">
+    <a href="/" class="flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-4" aria-label="BNL Plus — Home">
       <img src="/assets/logo-black.png" alt="BNL Plus" class="h-7 w-auto" />
     </a>
     <p class="eyebrow text-stone hidden sm:block">Body Rebuild Restart Result</p>
-    <a href="/index.html" class="navlink">Home</a>
+    <a href="/" class="navlink">Home</a>
   </div>
 </header>
 
@@ -152,7 +152,7 @@ function renderResult(submission) {
   // §3: under-18 keeps the result and the plan, loses only the paid CTA.
   const applyCta = results.under18
     ? ""
-    : `<a href="/apply.html" class="btn btn-primary">Find My Best Body Rebuild Tier</a>`;
+    : `<a href="/apply" class="btn btn-primary">Find My Best Body Rebuild Tier</a>`;
 
   const cautionBlock = results.painCaution
     ? `<p class="mt-6 text-[0.85rem] leading-[1.7] text-stone border border-line rounded-md p-5 bg-white">${esc(CAUTION_COPY)}</p>`
@@ -249,8 +249,8 @@ function renderUnavailable() {
   <h1 class="font-display font-extrabold display-tight text-black text-3xl md:text-4xl">This result link is no longer available.</h1>
   <p class="mt-6 text-[0.98rem] leading-[1.7] text-graphite">Result links expire for privacy. Taking the assessment again takes about four minutes and gives you a current result — your answers may have changed since last time anyway.</p>
   <div class="mt-8 flex flex-col sm:flex-row gap-3">
-    <a href="/assessment-start.html" class="btn btn-primary">Take the Assessment Again</a>
-    <a href="/contact.html" class="btn btn-secondary">Contact BNL Plus</a>
+    <a href="/assessment-start" class="btn btn-primary">Take the Assessment Again</a>
+    <a href="/contact" class="btn btn-secondary">Contact BNL Plus</a>
   </div>
 </div>`,
   });

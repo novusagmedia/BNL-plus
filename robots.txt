@@ -24,4 +24,4 @@ Allow: /
 Disallow: /assessment-start.html
 Disallow: /seven-day-plan.html
 
-Sitemap: https://bnlch.com/sitemap.xml
+Sitemap: https://www.bnlch.com/sitemap.xml

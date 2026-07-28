@@ -3,6 +3,13 @@
 
   "installCommand": "npm install --omit=dev",
 
+  // Every canonical tag, og:url, sitemap entry and llms.txt line on this site
+  // is written extensionless (/apply, not /apply.html) — the site was designed
+  // for clean URLs and only ever lacked this flag, so all of them resolved to
+  // 404s. Vercel also 308s the old .html paths here, preserving anything
+  // already indexed.
+  "cleanUrls": true,
+
   "functions": {
     "api/**/*.mjs": {
       "maxDuration": 15
