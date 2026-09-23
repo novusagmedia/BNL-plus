@@ -1,5 +1,5 @@
 import { TIERS, PROGRAM, usd, word } from "../facts.mjs";
-import { R_TIERS, R_ASSESSMENT, R_BODY_REBUILD } from "../related.mjs";
+import { R_TIERS, R_ASSESSMENT, G_RESTART } from "../related.mjs";
 
 // Target terms (Semrush US, 2026-09-22): how much does a personal trainer cost
 // 3,600/KD 17 · how much is a personal trainer 3,600/KD 24 · personal trainer
@@ -99,5 +99,5 @@ export default {
   // Figures computed on this page from the sourced $55 average.
   derivedFigures: [1, 2, 3].flatMap((n) => [AVG * n * 4, AVG * n * 16]),
 
-  related: [R_TIERS, R_ASSESSMENT, R_BODY_REBUILD],
+  related: [R_TIERS, R_ASSESSMENT, G_RESTART],
 };

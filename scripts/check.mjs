@@ -1,4 +1,4 @@
-// Pre-deploy checks. Run after `npm run build`; every check must pass before
+// Pre-deploy checks. Run after `npm run generate`; every check must pass before
 // asking to deploy. Visual review misses things these catch.
 //
 // Run: npm run check
@@ -195,8 +195,8 @@ check("Header and footer match site/chrome.mjs (build is current)", (fail) => {
     const ph = html[p].match(/<!-- ============ HEADER ============ -->[\s\S]*?<\/header>/)?.[0];
     const pf = html[p].match(/<!-- ============ FOOTER ============ -->[\s\S]*?<\/footer>/)?.[0];
     if (UTILITY_PAGES.has(p)) continue;
-    if (norm(ph) !== h) fail(`${p}: header differs; run npm run build`);
-    if (!pf || norm(pf) !== f) fail(`${p}: footer differs; run npm run build`);
+    if (norm(ph) !== h) fail(`${p}: header differs; run npm run generate`);
+    if (!pf || norm(pf) !== f) fail(`${p}: footer differs; run npm run generate`);
   }
 });
 

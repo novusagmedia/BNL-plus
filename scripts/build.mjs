@@ -3,7 +3,7 @@
 //   - the header and footer of every full-layout hand-written page
 //   - sitemap.xml and the Guides section of llms.txt
 //
-// Run: npm run build   (then npm run check before any deploy)
+// Run: npm run generate   (then npm run check before any deploy)
 
 import fs from "node:fs";
 import path from "node:path";

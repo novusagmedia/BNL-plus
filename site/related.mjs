@@ -35,3 +35,25 @@ export const R_FAQ = {
   title: "Body Rebuild questions",
   blurb: "Workouts, equipment, nutrition, coaching access, and enrollment.",
 };
+
+// Guides, for guide-to-guide links.
+export const G_COST = {
+  kind: "Guide",
+  href: "/guides/personal-trainer-cost",
+  title: "How much does a personal trainer cost?",
+  blurb: "Per session, per month, and how online coaching is priced differently.",
+};
+
+export const G_RESTART = {
+  kind: "Guide",
+  href: "/guides/start-working-out-again",
+  title: "How to start working out again",
+  blurb: "A first four weeks built to survive a busy schedule, not a perfect one.",
+};
+
+export const G_RECOMP = {
+  kind: "Guide",
+  href: "/guides/body-recomposition-workout-plan",
+  title: "A body recomposition workout plan",
+  blurb: "How to lose fat and build muscle at the same time, with a sample week.",
+};
