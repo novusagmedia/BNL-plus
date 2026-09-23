@@ -10,6 +10,7 @@ export const NAV = [
   { href: "/founder", label: "Founder Story" },
   { href: "/faq", label: "FAQ" },
   { href: "/apply", label: "Apply" },
+  { href: "/guides", label: "Guides" },
 ];
 
 export const FOOTER_NAV = [
