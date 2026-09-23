@@ -4,6 +4,8 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
     "test": "node --test \"api/**/*.test.mjs\""
   },
   "dependencies": {

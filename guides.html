@@ -3,50 +3,60 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact BNL Plus</title>
-<meta name="description" content="Contact BNL Plus about Body Rebuild, online coaching, local Private sessions, or an existing application." />
-<link rel="canonical" href="https://www.bnlch.com/contact" />
+<title>Guides for Restarting Strength Training | BNL Plus</title>
+<meta name="description" content="Straight answers for busy adults 35+ getting back into training: what coaching costs, how to restart, and what to expect. Written by Elijah Robles." />
+<link rel="canonical" href="https://www.bnlch.com/guides" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="BNL Plus" />
-<meta property="og:title" content="Contact BNL Plus" />
-<meta property="og:description" content="Contact BNL Plus about Body Rebuild, online coaching, local Private sessions, or an existing application." />
-<meta property="og:url" content="https://www.bnlch.com/contact" />
+<meta property="og:title" content="Guides for Restarting Strength Training | BNL Plus" />
+<meta property="og:description" content="Straight answers for busy adults 35+ getting back into training: what coaching costs, how to restart, and what to expect. Written by Elijah Robles." />
+<meta property="og:url" content="https://www.bnlch.com/guides" />
 <meta property="og:image" content="https://www.bnlch.com/assets/band-brand.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <script type="application/ld+json">
 [
   {
     "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact BNL Plus",
-    "url": "https://www.bnlch.com/contact",
-    "about": {
+    "@type": "CollectionPage",
+    "name": "BNL Plus Guides",
+    "url": "https://www.bnlch.com/guides",
+    "description": "Straight answers for busy adults 35+ getting back into training: what coaching costs, how to restart, and what to expect. Written by Elijah Robles.",
+    "publisher": {
       "@type": "Organization",
-      "@id": "https://www.bnlch.com/#organization",
       "name": "BNL Plus",
-      "email": "info@bnlch.com",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "email": "info@bnlch.com",
-        "areaServed": "US",
-        "availableLanguage": "English"
+      "url": "https://www.bnlch.com/"
+    },
+    "hasPart": [
+      {
+        "@type": "Article",
+        "headline": "How much does a personal trainer cost?",
+        "url": "https://www.bnlch.com/guides/personal-trainer-cost"
       }
-    }
+    ]
   },
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bnlch.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.bnlch.com/contact" }
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.bnlch.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Guides",
+        "item": "https://www.bnlch.com/guides"
+      }
     ]
   }
 ]
 </script>
-<link rel="icon" href="favicon.svg" type="image/svg+xml" />
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -55,18 +65,8 @@
   tailwind.config = {
     theme: {
       extend: {
-        colors: {
-          ink: "#171717",
-          graphite: "#333333",
-          stone: "#767676",
-          line: "#D7D7D4",
-          mist: "#ECECEA",
-          canvas: "#F7F7F5",
-        },
-        fontFamily: {
-          display: ["Archivo", "Inter", "sans-serif"],
-          body: ["Inter", "sans-serif"],
-        },
+        colors: { ink: "#171717", graphite: "#333333", stone: "#767676", line: "#D7D7D4", mist: "#ECECEA", canvas: "#F7F7F5" },
+        fontFamily: { display: ["Archivo", "Inter", "sans-serif"], body: ["Inter", "sans-serif"] },
       },
     },
   };
@@ -75,27 +75,13 @@
   html { scroll-behavior: smooth; }
   body { font-family: "Inter", sans-serif; }
   ::selection { background: #000; color: #fff; }
-
   .display-tight { letter-spacing: -0.03em; line-height: 0.98; }
-  .eyebrow {
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-  }
+  .eyebrow { font-weight: 600; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; }
 
   .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 0.9rem 1.6rem;
-    border-radius: 4px;
-    border: 1px solid #000;
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    font-weight: 600; font-size: 0.95rem; padding: 0.9rem 1.6rem;
+    border-radius: 4px; border: 1px solid #000;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
   }
   .btn:active { transform: translateY(1px); }
@@ -108,63 +94,29 @@
   .btn-invert:hover { background: #ECECEA; border-color: #ECECEA; }
   .btn-invert:focus-visible { outline-color: #fff; }
 
-  .navlink {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #333333;
-    transition: color 0.15s ease;
-    padding: 0.25rem 0;
-  }
+  .navlink { font-size: 0.9rem; font-weight: 500; color: #333333; transition: color 0.15s ease; padding: 0.25rem 0; }
   .navlink:hover { color: #000; }
   .navlink:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+  .navlink[aria-current="page"] { color: #000; font-weight: 600; }
 
-  .footlink {
-    font-size: 0.85rem;
-    color: #767676;
-    transition: color 0.15s ease;
-  }
+  .footlink { font-size: 0.85rem; color: #767676; transition: color 0.15s ease; }
   .footlink:hover { color: #000; }
   .footlink:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+  .footlink[aria-current="page"] { color: #000; }
 
-  .contact-link {
-    color: #000;
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    transition: color 0.15s ease;
-  }
-  .contact-link:hover { color: #333333; }
-  .contact-link:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  .hub-item {
+    position: relative; height: 100%; display: flex; flex-direction: column; gap: 0.7rem; background: #fff; border: 1px solid #D7D7D4; border-top: 4px solid #000; padding: 1.75rem 1.5rem 1.6rem;
+    transition: border-color 0.2s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
   }
-  .reveal.in-view { opacity: 1; transform: none; }
-
-  .hero-line {
-    display: block;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .loaded .hero-line { opacity: 1; transform: none; }
-  .hero-after {
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
-  }
-  .loaded .hero-after { opacity: 1; transform: none; }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .reveal, .hero-line, .hero-after {
-      opacity: 1 !important;
-      transform: none !important;
-      transition: none !important;
-    }
-  }
+  .hub-item:hover { border-color: #000; transform: translateY(-2px); box-shadow: 0 14px 30px -18px rgba(23,23,23,0.35); }
+  .hub-item:active { transform: translateY(0); }
+  .hub-item:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+  .hub-title { font-family: "Archivo", sans-serif; font-weight: 800; color: #000; font-size: 1.45rem; line-height: 1.15; letter-spacing: -0.02em; }
+  .hub-lead { font-size: 0.95rem; line-height: 1.65; color: #333333; }
+  .hub-arrow { margin-top: auto; padding-top: 0.75rem; font-size: 0.9rem; font-weight: 600; color: #000; }
+  @media (prefers-reduced-motion: reduce) { .hub-item { transition: none; } .hub-item:hover { transform: none; } }
 </style>
 </head>
 
@@ -216,69 +168,26 @@
 
 <main id="main">
 
-<!-- ============ HERO ============ -->
 <section class="bg-canvas border-b border-line" aria-labelledby="hero-heading">
   <div class="max-w-7xl mx-auto px-5 md:px-8 pt-16 pb-16 md:pt-20 md:pb-20">
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-      <div class="lg:col-span-7">
-        <p class="eyebrow text-stone mb-6 hero-after">Contact BNL Plus</p>
-        <h1 id="hero-heading" class="font-display font-extrabold display-tight text-black text-4xl sm:text-5xl lg:text-[4.2rem]">
-          <span class="hero-line">Ask a clear question. Get a clear answer.</span>
-        </h1>
-        <p class="hero-after mt-7 max-w-xl text-[1.05rem] leading-[1.7] text-graphite">
-          Contact BNL Plus about Body Rebuild, an existing application, online coaching, or local Private sessions.
-        </p>
-        <div class="hero-after mt-9">
-          <a href="mailto:info@bnlch.com" class="btn btn-primary">Email info@bnlch.com</a>
-        </div>
-      </div>
-      <div class="lg:col-span-5 hero-after">
-        <figure class="border border-line bg-white p-2 rounded-md">
-          <img src="assets/contact-hero.jpg" alt="Elijah seated in the gym, hands clasped, smiling." class="w-full aspect-[4/5] object-cover object-[center_25%] grayscale rounded-sm" />
-        </figure>
-      </div>
-    </div>
+    <p class="eyebrow text-stone mb-6">Guides</p>
+    <h1 id="hero-heading" class="font-display font-extrabold display-tight text-black text-4xl sm:text-5xl lg:text-[4.2rem] max-w-4xl">Straight answers for getting back into training.</h1>
+    <p class="mt-7 max-w-xl text-[1.05rem] leading-[1.7] text-graphite">What coaching costs, how to restart without starting over again, and what to expect along the way. Written by Elijah Robles for busy adults 35+.</p>
   </div>
 </section>
 
-<!-- ============ CONTACT DETAILS ============ -->
-<section class="bg-white" aria-label="Contact details">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
-    <div class="grid md:grid-cols-3 border-t border-line">
-      <div class="pt-8 pb-4 md:pr-10 md:border-r border-line reveal">
-        <p class="eyebrow text-black mb-4">Email</p>
-        <p class="text-[0.98rem] leading-[1.7] text-graphite">
-          <a href="mailto:info@bnlch.com" class="contact-link">info@bnlch.com</a>
-        </p>
-        <p class="mt-3 text-[0.9rem] leading-[1.7] text-stone">Please allow up to two business days for a response.</p>
-      </div>
-      <div class="pt-8 pb-4 md:px-10 md:border-r border-line reveal" data-delay="100">
-        <p class="eyebrow text-black mb-4">Service Area</p>
-        <p class="text-[0.9rem] leading-[1.7] text-graphite">Online coaching is available across the United States. Local Private sessions are available in the Scottsbluff, Nebraska area by appointment after enrollment.</p>
-      </div>
-      <div class="pt-8 pb-4 md:pl-10 reveal" data-delay="200">
-        <p class="eyebrow text-black mb-4">Social</p>
-        <ul class="space-y-2 text-[0.9rem] leading-[1.7] text-graphite">
-          <li>Instagram: <a href="https://www.instagram.com/22jusslijah" class="contact-link" rel="noopener" target="_blank">@22jusslijah</a></li>
-          <li>TikTok: <a href="https://www.tiktok.com/@elijahromanrobles" class="contact-link" rel="noopener" target="_blank">@elijahromanrobles</a></li>
-          <li>Facebook: <a href="https://www.facebook.com/profile.php?id=61587408270373" class="contact-link" rel="noopener" target="_blank">Elijah Robles</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FINAL CTA (black) ============ -->
-<section class="bg-black text-white" aria-labelledby="cta-heading">
-  <div class="max-w-4xl mx-auto px-5 md:px-8 py-20 md:py-28 text-center">
-    <div class="reveal">
-      <h2 id="cta-heading" class="font-display font-extrabold display-tight text-white text-3xl md:text-5xl">
-        For program fit, start with the assessment instead of sending a general message.
-      </h2>
-      <div class="mt-9">
-        <a href="/restart-assessment" class="btn btn-invert">Take the Free Restart Assessment</a>
-      </div>
-    </div>
+<section aria-label="All guides">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-20">
+    <ul class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <li>
+        <a class="hub-item" href="/guides/personal-trainer-cost">
+          <span class="eyebrow text-stone">Cost and value</span>
+          <span class="hub-title">How much does a personal trainer cost?</span>
+          <span class="hub-lead">Most in-person trainers charge $40 to $100 a session. Here is what drives that number, what it adds up to over a few months, and how online coaching is priced differently.</span>
+          <span class="hub-arrow" aria-hidden="true">Read the guide &rarr;</span>
+        </a>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -308,8 +217,8 @@
         <a class="footlink" href="/restart-assessment">Restart Assessment</a>
         <a class="footlink" href="/apply">Apply</a>
         <a class="footlink" href="/faq">FAQ</a>
-        <a class="footlink" href="/guides">Guides</a>
-        <a class="footlink" href="/contact" aria-current="page">Contact</a>
+        <a class="footlink" href="/guides" aria-current="page">Guides</a>
+        <a class="footlink" href="/contact">Contact</a>
         <a class="footlink" href="/policies">Policies</a>
       </nav>
       <div class="lg:col-span-3">
@@ -332,36 +241,16 @@
 </footer>
 
 <script>
-  window.addEventListener("load", () => document.body.classList.add("loaded"));
-
   const menuBtn = document.getElementById("menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
-  const iconOpen = document.getElementById("icon-open");
-  const iconClose = document.getElementById("icon-close");
   menuBtn.addEventListener("click", () => {
     const open = mobileMenu.classList.toggle("hidden") === false;
     menuBtn.setAttribute("aria-expanded", String(open));
     menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    iconOpen.classList.toggle("hidden", open);
-    iconClose.classList.toggle("hidden", !open);
+    document.getElementById("icon-open").classList.toggle("hidden", open);
+    document.getElementById("icon-close").classList.toggle("hidden", !open);
   });
-
-  const io = new IntersectionObserver(
-    (entries) => {
-      for (const e of entries) {
-        if (e.isIntersecting) {
-          const d = e.target.dataset.delay;
-          if (d) e.target.style.transitionDelay = d + "ms";
-          e.target.classList.add("in-view");
-          io.unobserve(e.target);
-        }
-      }
-    },
-    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
-  );
-  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 </script>
-
 <script defer src="/assets/cohort.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>

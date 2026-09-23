@@ -1,0 +1,5 @@
+# Build source and tooling: tracked in git, never served.
+site/
+scripts/
+migrations/
+api/**/*.test.mjs
